@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/', '/*?*'],
       },
     ],
-    sitemap: 'https://in7gaming.co/sitemap.xml',
-    host: 'https://in7gaming.co',
+    sitemap: 'https://www.in7gaming.co/sitemap.xml',
+    host: 'https://www.in7gaming.co',
   };
 }

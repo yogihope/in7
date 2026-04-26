@@ -1,7 +1,7 @@
 // Tiny SEO helpers for per-page schema (BreadcrumbList + WebPage).
 // Keeps page files clean and ensures every IN7 page has valid rich-result data.
 
-export const SITE_URL = 'https://in7gaming.co';
+export const SITE_URL = 'https://www.in7gaming.co';
 
 type Crumb = { name: string; href: string };
 

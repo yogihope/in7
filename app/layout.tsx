@@ -6,7 +6,7 @@ import MobileCTA from '@/components/MobileCTA';
 import LiveDrops from '@/components/LiveDrops';
 import { IN7_DOWNLOAD_URL } from '@/lib/constants';
 
-const SITE_URL = 'https://in7gaming.co';
+const SITE_URL = 'https://www.in7gaming.co';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

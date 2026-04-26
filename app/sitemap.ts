@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE = 'https://in7gaming.co';
+const BASE = 'https://www.in7gaming.co';
 
 // Tiered priority for SEO · homepage > APK download > other in7-game keyword pages > brand pages > legal
 type Tier = { path: string; priority: number; cf: 'daily' | 'weekly' | 'monthly' | 'yearly' };
