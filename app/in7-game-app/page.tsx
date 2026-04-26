@@ -7,7 +7,7 @@ import { breadcrumbJsonLd, webPageJsonLd, jsonLdScript } from '@/lib/seo';
 export const metadata: Metadata = {
   title: 'IN7 Game App · Download Light IN7 App for Android',
   description:
-    'IN7 Game App is the lightweight 38 MB Android app for IN7 gaming. Download IN7 app, claim ₹777 welcome bonus and withdraw winnings to UPI in 5 minutes.',
+    'IN7 Game App is the lightweight 48 MB Android app for IN7 gaming. Download IN7 app, claim ₹777 welcome bonus and withdraw winnings to UPI in 5 minutes.',
   alternates: { canonical: '/in7-game-app' },
   keywords: [
     'in7 game app',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'IN7 Game App · Download Light IN7 App for Android',
-    description: 'IN7 game app · 38 MB, fast, signed. Download IN7 app for Android and start playing in 6 seconds.',
+    description: 'IN7 game app · 48 MB, fast, signed. Download IN7 app for Android and start playing in 6 seconds.',
     url: '/in7-game-app',
     images: [{ url: '/in7-game-app-screenshot.jpeg', width: 1200, height: 630, alt: 'IN7 Game App screenshot · IN7 gaming home screen' }],
   },
@@ -64,8 +64,8 @@ export default function In7AppPage() {
               ['App name', 'IN7 Game'],
               ['Package', 'in.in7co.gaming'],
               ['Latest version', '4.7.1, Mar 2026'],
-              ['File size', '~38 MB'],
-              ['Android required', '7.0 (Nougat) and above'],
+              ['File size', '~48 MB'],
+              ['Android required', '6.0 (Marshmallow) and above'],
               ['Permissions', 'Storage (write APK), Internet, Notifications'],
               ['Install source', 'Direct APK · in7gaming.co'],
               ['Signing', 'SHA-256 · v3 signature scheme'],
@@ -158,7 +158,7 @@ export default function In7AppPage() {
           },
           {
             q: 'Mera phone purana hai, app chalega kya?',
-            a: 'Agar Android 7.0 ya upar hai, to chalega. IN7 app intentionally light banaya gaya hai (38 MB) taaki budget phones par bhi smooth chale.',
+            a: 'Agar Android 7.0 ya upar hai, to chalega. IN7 app intentionally light banaya gaya hai (48 MB) taaki budget phones par bhi smooth chale.',
           },
           {
             q: 'Update kaise milega?',
@@ -176,7 +176,7 @@ export default function In7AppPage() {
           ]),
           webPageJsonLd({
             title: 'IN7 Game App · Download Light IN7 App for Android',
-            description: 'IN7 Game App is the lightweight 38 MB Android app for IN7 gaming.',
+            description: 'IN7 Game App is the lightweight 48 MB Android app for IN7 gaming.',
             path: '/in7-game-app',
             primaryImage: '/in7-game-app-screenshot.jpeg',
           }),

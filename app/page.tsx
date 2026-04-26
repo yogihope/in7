@@ -65,13 +65,16 @@ export default function HomePage() {
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} style={{ display: 'flex', gap: 56 }}>
               <span className="marquee-item">in7 game apk</span>
-              <span className="marquee-item">instant UPI cashout</span>
+              <span className="marquee-item">Teen Patti</span>
               <span className="marquee-item">in7 gaming</span>
-              <span className="marquee-item">skill rooms only</span>
+              <span className="marquee-item">Andar Bahar</span>
               <span className="marquee-item">in7 game online</span>
-              <span className="marquee-item">made for India</span>
+              <span className="marquee-item">Dragon vs Tiger</span>
+              <span className="marquee-item">in7 rummy</span>
+              <span className="marquee-item">Lucky 7</span>
               <span className="marquee-item">in7 game app</span>
               <span className="marquee-item">₹777 welcome bonus</span>
+              <span className="marquee-item">UPI cashout 5 min</span>
             </div>
           ))}
         </div>
@@ -129,14 +132,14 @@ export default function HomePage() {
             <div>
               <span className="eyebrow">The IN7 app</span>
               <h2 className="h-section" style={{ marginTop: 14 }}>
-                A 38 MB download. <br />A whole gaming room in your <span className="marker-line">pocket</span>.
+                A 48 MB download. <br />A whole gaming room in your <span className="marker-line">pocket</span>.
               </h2>
               <p className="muted" style={{ marginTop: 18, fontSize: '1rem', lineHeight: 1.7, maxWidth: 460 }}>
                 The IN7 game APK is light, signed, and updates over-the-air. Open the app, pick your room, and you’re seated in 6 seconds, even on a budget Android. No app-store gatekeepers, no junk SDKs.
               </p>
               <div className="pill-list" style={{ marginTop: 22 }}>
                 <span className="pill">Android 7+</span>
-                <span className="pill">~38 MB</span>
+                <span className="pill">~48 MB</span>
                 <span className="pill">No ads</span>
                 <span className="pill">RBI-compliant payouts</span>
                 <span className="pill">SHA-256 signed</span>
@@ -218,7 +221,7 @@ export default function HomePage() {
               <span className="num">i.</span>
               <div>
                 <h3>Download the IN7 APK</h3>
-                <p>Tap the Download button. The IN7 game apk file is around 38 MB, install it from your downloads folder. First-time installs need “unknown sources” enabled.</p>
+                <p>Tap the Download button. The IN7 game apk file is around 48 MB, install it from your downloads folder. First-time installs need “unknown sources” enabled.</p>
               </div>
             </div>
             <div className="step-row">
@@ -257,7 +260,7 @@ export default function HomePage() {
         items={[
           {
             q: 'IN7 game APK kaise download karein?',
-            a: 'Bahut simple, IN7 ki download page pe jaao, “Download IN7 APK” button click karo. File 38 MB ke around hai, downloads folder mein save hogi. Ek baar “Unknown sources” enable kar do phone settings mein, install ho jaayega.',
+            a: 'Bahut simple, IN7 ki download page pe jaao, “Download IN7 APK” button click karo. File 48 MB ke around hai, downloads folder mein save hogi. Ek baar “Unknown sources” enable kar do phone settings mein, install ho jaayega.',
           },
           {
             q: 'Kya IN7 game real money deta hai?',

@@ -109,7 +109,7 @@ export default function In7ReviewPage() {
               <h3 className="serif" style={{ fontSize: '1.4rem', marginTop: 12, letterSpacing: '-0.02em', color: '#fff8f3' }}>Three things we’d fix.</h3>
               <ul style={{ marginTop: 14, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {[
-                  'Only 5 game rooms. Variety is thin compared to bigger apps.',
+                  'Seven rooms (Teen Patti, Andar Bahar, Dragon vs Tiger, IN7 Rummy, Lucky 7, Mind Match, Spin Sevens). Solid, but bigger casinos still offer more variety.',
                   'No iOS app yet, only Android & mobile-web.',
                   'Customer support shuts at 11 pm IST. 24×7 would help.',
                 ].map((p, i) => (
@@ -159,7 +159,7 @@ export default function In7ReviewPage() {
           },
           {
             q: 'IN7 review mein 4.6 hi kyun, 5 nahi?',
-            a: 'Game variety thoda kam hai (sirf 5 rooms), aur iOS app abhi available nahi. Agar ye dono fix ho jayein, score 4.9+ ho jaayega.',
+            a: 'Game variety solid hai (7 rooms — Teen Patti, Andar Bahar, Dragon vs Tiger, IN7 Rummy, Lucky 7, Mind Match, Spin Sevens), biggest deduction iOS app ki kami hai. iOS launch ho jaye to score 4.9+ ho jaayega.',
           },
         ]}
       />
@@ -177,7 +177,7 @@ export default function In7ReviewPage() {
             itemReviewed: {
               '@type': 'MobileApplication',
               name: 'IN7 Game',
-              operatingSystem: 'Android 7.0+',
+              operatingSystem: 'Android 6.0+',
               applicationCategory: 'GameApplication',
             },
             author: { '@type': 'Organization', name: 'IN7 Gaming Editorial' },

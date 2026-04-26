@@ -93,7 +93,7 @@ export default function PaiseKamaneWalaGamePage() {
               { stat: '₹777', label: 'Welcome bonus', d: 'Pehle deposit pe wallet mein add. Most apps ₹50-₹100 dete hain.' },
               { stat: '5 min', label: 'UPI cashout', d: 'Median measured time. Many apps 24-48 ghante lete hain.' },
               { stat: '₹100', label: 'Min withdrawal', d: 'Low threshold = chhote winnings bhi nikal sakte ho.' },
-              { stat: '38 MB', label: 'APK size', d: 'Bahut light. Budget phones (Redmi 9, Realme C-series) mein bhi smooth.' },
+              { stat: '48 MB', label: 'APK size', d: 'Bahut light. Budget phones (Redmi 9, Realme C-series) mein bhi smooth.' },
               { stat: '0', label: 'Hidden fees', d: 'Deposit free, withdrawal free. Sirf TDS Indian tax law ke hisaab se.' },
               { stat: '4.6/5', label: 'Avg rating', d: '50,000+ user ratings. Honest 90-day review yahan padhein.' },
             ].map((s, i) => (

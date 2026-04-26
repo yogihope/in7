@@ -15,10 +15,12 @@ export const metadata: Metadata = {
     'in7 game kaise khelein',
     'in7 gameplay',
     'in7 game tutorial',
-    'in7 quick 21 rules',
+    'in7 teen patti rules',
+    'in7 andar bahar rules',
+    'in7 dragon vs tiger',
     'in7 rummy rules',
+    'in7 lucky 7',
     'in7 mind match',
-    'in7 tap trail',
     'in7 spin sevens',
   ],
   openGraph: {
@@ -32,53 +34,73 @@ export const metadata: Metadata = {
 const ROOMS = [
   {
     n: '01',
-    name: 'Quick 21',
+    name: 'Teen Patti',
     tag: 'Card · 90 sec',
     rules:
-      'You and the dealer each get two cards face-up. Aim: hand value closer to 21 than the dealer without going over. Numbered cards count face value, J/Q/K count 10, Ace is 1 or 11.',
+      'India’s favourite 3-card poker variant on IN7. You and 2-5 opponents are dealt 3 cards each. Place the boot, then play "blind" (without looking) or "chaal" (after looking). Pack to fold, show to win. Hand strength: Trail (3 of a kind) > Pure Sequence > Sequence > Colour > Pair > High Card.',
     scoring:
-      'Win = your stake × 1.95 if you beat the dealer. Push (tie) = stake refunded. 21 on opening two cards (Blackjack) = stake × 2.5. Bust over 21 = stake forfeited.',
-    tip: 'Stand on hand value 17+. Hit on 11 or below. Between 12–16, watch the dealer’s up-card.',
+      'Winner takes the full pot. A "show" stake equals 2× the current chaal amount. Side bets on opening 3 cards (Trail / Pair Plus) pay 5×-150× depending on combination.',
+    tip: 'Going blind early feels bold but statistically loses ~15% more bankroll over a long Teen Patti session. Look at your cards by round 3 if you haven’t already.',
   },
   {
     n: '02',
-    name: 'Mind Match',
-    tag: 'Strategy · 4 min',
+    name: 'Andar Bahar',
+    tag: 'Card · 30 sec',
     rules:
-      'A 4×4 grid of paired symbols flashes for 3 seconds, then flips face-down. You and three opponents take turns flipping two tiles, trying to match pairs. Each correct match keeps the tiles flipped and gives you another turn.',
+      'Classic Andar Bahar on IN7. Dealer flips a single "joker" card face-up in the centre. Cards are dealt alternately to Andar (left) and Bahar (right). First side to receive a card matching the joker rank wins. Bet on Andar or Bahar before the deal.',
     scoring:
-      'Each pair = 100 points. The fastest match in a round earns a 50 point speed bonus. Highest total at the end of the grid takes the pot, second place gets 30% back.',
-    tip: 'Mentally divide the grid into quadrants and memorise positions, not just colours. Your opponents are tracking the same tiles you reveal.',
+      'Andar bet pays 0.9× stake. Bahar bet pays 1× stake (Bahar is slightly less likely to land first, so it pays a touch more). Side bets on first-card position pay 11×.',
+    tip: 'Andar gets dealt the first card in IN7 standard rules, giving it a small statistical edge. Stick with Andar bets when uncertain — long-run RTP is higher.',
   },
   {
     n: '03',
-    name: 'IN7 Rummy',
-    tag: 'Classic · 6–8 min',
+    name: 'Dragon vs Tiger',
+    tag: 'Casino · 15 sec',
     rules:
-      'Standard 13-card Indian Rummy. Each player is dealt 13 cards. Form sets (3+ of same rank) and sequences (3+ consecutive of same suit). At least one pure sequence (no joker) is mandatory to declare.',
+      'Dragon vs Tiger on IN7 is the fastest casino room in the app. Two cards drawn from a single deck — one for "Dragon", one for "Tiger". Bet on which side gets the higher card (Ace counts low, King highest). Tie and suit side bets available.',
     scoring:
-      'First to declare valid hand wins the pot. Other players pay points based on un-melded card values, capped at 80. Drop early to limit losses to 20 points.',
-    tip: 'Lock in your pure sequence first. Discard high cards (J/Q/K) early if they don’t fit your sets.',
+      'Straight Dragon or Tiger bet pays 0.95× stake. Tie bet pays 8× stake (rare outcome). Suit-specific side bets pay 3×-50×.',
+    tip: 'Skip the tie bet. House edge on tie is ~32%. Stick with straight Dragon or Tiger bets where the edge is under 4%.',
   },
   {
     n: '04',
-    name: 'Tap Trail',
-    tag: 'Speed · 60 sec',
+    name: 'IN7 Rummy',
+    tag: 'Classic · 6-8 min',
     rules:
-      'A trail of dots appears on screen. Tap them in the correct order (numbered) as fast as possible. Three other players race the same trail. New trails generate every round.',
+      'Standard 13-card Indian Rummy on IN7. Each player is dealt 13 cards. Form sets (3+ of same rank) and sequences (3+ consecutive of same suit). At least one pure sequence (no joker) is mandatory before you can declare.',
     scoring:
-      'Fastest finisher takes the pot. Mis-taps cost 0.5 seconds each. Average finish time across the table determines payout split for #2 and #3.',
-    tip: 'Don’t look at numbers in order. Scan ahead. Your eyes know the next 3 dots before your finger taps the current one.',
+      'First to declare a valid hand wins the pot. Other players pay points based on un-melded card values, capped at 80. Drop early to limit losses to 20 points.',
+    tip: 'Lock in your pure sequence first. Discard high cards (J/Q/K) early if they don’t fit your sets — they cost the most points if you lose.',
   },
   {
     n: '05',
+    name: 'Lucky 7',
+    tag: 'Dice · 10 sec',
+    rules:
+      'Lucky 7 is IN7’s signature dice room. Two dice rolled together. Bet on whether the sum is "Under 7" (sum 2-6), "Exactly 7", or "Over 7" (sum 8-12). The dice roll, sum settles, payouts pay instantly.',
+    scoring:
+      'Under 7 or Over 7 = stake × 1.95. Exactly 7 = stake × 4 (rarer outcome). Pair bet (both dice same) = stake × 5. Specific-pair (e.g. 6-6) = stake × 30.',
+    tip: 'Under 7 and Over 7 each have 15 winning outcomes — statistically tied. The "Exactly 7" payout looks attractive but the mathematical edge favours Under/Over for long-run play.',
+  },
+  {
+    n: '06',
+    name: 'Mind Match',
+    tag: 'Memory · 4 min',
+    rules:
+      'IN7 exclusive memory room. A 4×4 grid of paired symbols flashes for 3 seconds, then flips face-down. You and three opponents take turns flipping two tiles, trying to match pairs. Each correct match keeps the tiles flipped and gives you another turn.',
+    scoring:
+      'Each pair = 100 points. Fastest match in a round earns a 50 point speed bonus. Highest total at the end of the grid takes the pot, second place gets 30% back.',
+    tip: 'Mentally divide the grid into quadrants (NW, NE, SW, SE) and memorise positions, not just colours. Your opponents are tracking the same tiles you reveal.',
+  },
+  {
+    n: '07',
     name: 'Spin Sevens',
     tag: 'Casual · 5 sec',
     rules:
-      'Tap to spin. Three reels stop with symbols. Three matching symbols pay out. The “7” symbol multiplies wins by 7 when it lands on any reel.',
+      'IN7 Spin Sevens is the lightest game in the app. Tap to spin. Three reels stop with symbols. Three matching symbols pay out. The "7" symbol multiplies wins by 7 when it lands on any reel.',
     scoring:
-      'Cherries = stake × 1.5. Bells = stake × 3. Sevens-anywhere multiplier = stake × 7 on top of base. Three sevens (jackpot) = stake × 77.',
-    tip: 'Spin Sevens is the lightest IN7 game. Use the daily free spin first. Only put cash in if you’ve had a quiet evening at the skill rooms.',
+      'Cherries = stake × 1.5. Bells = stake × 3. Sevens-anywhere multiplier = stake × 7 on top of base payout. Three sevens (jackpot) = stake × 77.',
+    tip: 'Use the daily free Spin Sevens first. Only put cash in if you’ve had a quiet evening at the skill rooms — it’s entertainment, not income.',
   },
 ];
 
@@ -89,7 +111,7 @@ export default function HowToPlayIn7Page() {
         <div className="wrap">
           <span className="eyebrow">/ how to play in7</span>
           <h1 className="display balance" style={{ marginTop: 14, maxWidth: 940 }}>
-            How to play IN7 · five rooms, <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>five rhythms</em>.
+            How to play IN7 · seven rooms, <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>seven rhythms</em>.
           </h1>
           <p className="muted balance" style={{ marginTop: 22, fontSize: '1.08rem', lineHeight: 1.65, maxWidth: 720 }}>
             IN7 game rules are short on purpose. Each room takes a couple minutes to learn and a lifetime to push. This guide walks you through every IN7 room: rules, scoring, and one tip we learned the hard way.

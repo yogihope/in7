@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     'in7 gaming india',
     'in7 gaming app',
     'in7 gaming co',
+    'in7 teen patti',
+    'in7 andar bahar',
+    'in7 dragon vs tiger',
+    'in7 rummy',
+    'in7 lucky 7',
   ],
   openGraph: {
     title: 'IN7 Gaming Online · India’s Skill Real-Money Game',
@@ -66,7 +71,7 @@ export default function In7GamingPage() {
               {[
                 { n: '01', t: 'Fair tables', d: 'Every IN7 game uses certified RNG seeds and a published table-fairness report. No silent house edge tweaks.' },
                 { n: '02', t: 'Fast money', d: 'Withdrawals are paid out in batches every 90 seconds. Verified players see UPI deposits in under 5 minutes.' },
-                { n: '03', t: 'Light app', d: 'IN7 game apk weighs under 40 MB. Cold-start under 6 seconds even on a Redmi 9.' },
+                { n: '03', t: 'Light app', d: 'IN7 game apk weighs under 50 MB. Cold-start under 6 seconds even on a Redmi 9.' },
                 { n: '04', t: 'Real support', d: 'Hindi-English chat support that actually replies, average first response under 4 minutes between 9am–11pm IST.' },
               ].map((p, i) => (
                 <div key={i} className="card" style={{ display: 'grid', gridTemplateColumns: '64px 1fr', gap: 16, alignItems: 'start' }}>
@@ -88,20 +93,22 @@ export default function In7GamingPage() {
           <div style={{ maxWidth: 720 }}>
             <span className="eyebrow">The library</span>
             <h2 className="h-section" style={{ marginTop: 14 }}>
-              Five rooms. <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>Different</em> rhythms.
+              Seven rooms. <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>Different</em> rhythms.
             </h2>
             <p className="muted" style={{ marginTop: 18, fontSize: '1rem', lineHeight: 1.7 }}>
-              IN7 Gaming intentionally keeps the menu short. Five rooms, all skill-based, each playable in under 8 minutes.
+              IN7 Gaming offers India’s most-loved real-money formats — Teen Patti, Andar Bahar, Dragon vs Tiger, Rummy and Lucky 7 — alongside two unique skill innovations only on IN7.
             </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16, marginTop: 36 }} className="rooms-grid">
             {[
-              { tag: 'Card', title: 'Quick 21', body: 'Two-card snap rounds. Sharpen reading the dealer, win in 90 seconds.', stake: '₹10–₹500' },
-              { tag: 'Strategy', title: 'Mind Match', body: 'Pattern-based memory rounds. Pure skill, zero RNG. Top earners come from here.', stake: '₹20–₹2000' },
-              { tag: 'Speed', title: 'Tap Trail', body: 'Reaction-time rounds against three other players. 60 seconds per match.', stake: '₹5–₹300' },
-              { tag: 'Classic', title: 'IN7 Rummy', body: 'A clean, ad-free 13-card rummy variant. Tournaments every evening.', stake: '₹25–₹5000' },
-              { tag: 'Casual', title: 'Spin Sevens', body: 'A daily lucky-spin format. Free to play once a day, optional cash spins after.', stake: 'Free–₹100' },
+              { tag: 'Card', title: 'Teen Patti', body: 'India’s favourite 3-card poker. Boot, blind or chaal — pack or show to win the pot.', stake: '₹10–₹2000' },
+              { tag: 'Card', title: 'Andar Bahar', body: 'The classic Andar Bahar everyone knows. Pick a side, watch the joker land, settle in 30 sec.', stake: '₹10–₹1000' },
+              { tag: 'Casino', title: 'Dragon vs Tiger', body: 'IN7’s fastest casino room. Two cards, higher wins. 15-second rounds non-stop.', stake: '₹10–₹2000' },
+              { tag: 'Classic', title: 'IN7 Rummy', body: 'A clean, ad-free 13-card Indian Rummy. Daily tournaments + practice tables.', stake: '₹25–₹5000' },
+              { tag: 'Dice', title: 'Lucky 7', body: 'IN7 signature dice room. Bet under, over, or exactly 7. Settles in 10 seconds.', stake: '₹10–₹500' },
+              { tag: 'Memory', title: 'Mind Match', body: 'IN7 exclusive memory game. 4×4 grid, four players, pure skill, zero RNG.', stake: '₹20–₹2000' },
+              { tag: 'Casual', title: 'Spin Sevens', body: 'Daily lucky-spin format. One free spin a day, optional cash spins after.', stake: 'Free–₹100' },
             ].map((r, i) => (
               <article key={i} className="card" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

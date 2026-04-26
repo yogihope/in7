@@ -7,7 +7,7 @@ import { breadcrumbJsonLd, webPageJsonLd, jsonLdScript, SITE_URL } from '@/lib/s
 export const metadata: Metadata = {
   title: 'IN7 Game APK Download · Latest IN7 APK v4.7 Free',
   description:
-    'Download IN7 game APK latest version 4.7.1, ~38 MB, signed & safe. Free direct IN7 APK download for Android with full step-by-step install guide inside.',
+    'Download IN7 game APK latest version 4.7.1, ~48 MB, signed & safe. Free direct IN7 APK download for Android with full step-by-step install guide inside.',
   alternates: { canonical: '/in7-game-apk-download' },
   keywords: [
     'in7 game apk',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'IN7 Game APK Download · Latest IN7 APK v4.7 Free',
-    description: 'Free direct IN7 APK download for Android · latest v4.7.1, 38 MB, SHA-256 signed.',
+    description: 'Free direct IN7 APK download for Android · latest v4.7.1, 48 MB, SHA-256 signed.',
     url: '/in7-game-apk-download',
     images: [{ url: '/in7-game-banner.jpeg', width: 1200, height: 630, alt: 'IN7 Game APK Download · latest IN7 APK for Android' }],
   },
@@ -35,7 +35,7 @@ export default function In7DownloadPage() {
         <div className="wrap">
           <span className="eyebrow">/ in7 game apk download</span>
           <h1 className="display balance" style={{ marginTop: 14, maxWidth: 920 }}>
-            Get the IN7 game apk, <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>direct</em>, signed, ~38 MB.
+            Get the IN7 game apk, <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>direct</em>, signed, ~48 MB.
           </h1>
           <p className="muted balance" style={{ marginTop: 20, fontSize: '1.08rem', lineHeight: 1.65, maxWidth: 720 }}>
             No app stores in the way, no third-party mirrors. The latest IN7 apk lives on this page, fingerprinted, virus-scanned, and updated every release. Install once, get OTA updates after.
@@ -45,10 +45,10 @@ export default function In7DownloadPage() {
             <div>
               <span className="tag" style={{ background: 'rgba(255,180,180,0.18)', color: '#ffb4b4', borderColor: 'rgba(255,180,180,0.3)' }}>Latest · v4.7.1</span>
               <h2 className="serif" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', marginTop: 14, color: '#fff8f3', letterSpacing: '-0.02em' }}>
-                IN7 Game APK · Android 7.0+
+                IN7 Game APK · Android 6.0+
               </h2>
               <div style={{ marginTop: 14, display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: '0.86rem', color: 'rgba(255,248,243,0.7)' }}>
-                <span>📦 38.4 MB</span>
+                <span>📦 48.6 MB</span>
                 <span>🛡️ SHA-256 signed</span>
                 <span>📅 Updated Apr 2026</span>
                 <span>🇮🇳 Made in India</span>
@@ -152,7 +152,7 @@ export default function In7DownloadPage() {
           },
           {
             q: 'IN7 APK ka size kitna hai?',
-            a: 'Around 38 MB. Ye intentionally chhota rakha hai taaki low-end Android phones (Redmi 9, Realme C-series, Samsung A14) par bhi smooth chale.',
+            a: 'Around 48 MB. Ye intentionally chhota rakha hai taaki low-end Android phones (Redmi 9, Realme C-series, Samsung A14) par bhi smooth chale.',
           },
           {
             q: 'iPhone ke liye IN7 apk milega?',
@@ -172,11 +172,11 @@ export default function In7DownloadPage() {
             '@context': 'https://schema.org',
             '@type': 'SoftwareApplication',
             name: 'IN7 Game APK',
-            operatingSystem: 'Android 7.0+',
+            operatingSystem: 'Android 6.0+',
             applicationCategory: 'GameApplication',
             downloadUrl: IN7_DOWNLOAD_URL,
             installUrl: IN7_DOWNLOAD_URL,
-            fileSize: '38MB',
+            fileSize: '48MB',
             softwareVersion: '4.7.1',
             datePublished: '2026-04-01',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
@@ -191,7 +191,7 @@ export default function In7DownloadPage() {
           },
           webPageJsonLd({
             title: 'IN7 Game APK Download · Latest IN7 APK v4.7 Free',
-            description: 'Free direct IN7 APK download for Android · latest v4.7.1, 38 MB, signed.',
+            description: 'Free direct IN7 APK download for Android · latest v4.7.1, 48 MB, signed.',
             path: '/in7-game-apk-download',
             primaryImage: '/in7-game-banner.jpeg',
           }),

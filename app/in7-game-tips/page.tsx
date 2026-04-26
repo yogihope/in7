@@ -91,21 +91,30 @@ export default function In7TipsPage() {
           <div style={{ marginTop: 36 }}>
             {[
               {
-                room: 'Quick 21',
-                tagline: 'Math beats vibes',
+                room: 'Teen Patti',
+                tagline: 'Patience > aggression',
                 tips: [
-                  'Memorise the basic strategy chart for hand 12-16 vs dealer up-card. It’s a 1-page table that flips your win rate by 4 percentage points.',
-                  'Never split 10s. Never split 5s. Always split 8s and Aces.',
-                  'Don’t take insurance. Long-run negative expected value, regardless of dealer’s up-card.',
+                  'Going blind early loses ~15% more bankroll over a long Teen Patti session. Look at your cards by round 3.',
+                  'Pack early on weak hands (high card under K). The cost of one boot is much smaller than the cost of bluffing into a Trail.',
+                  'Trail (3 of a kind) only appears 0.24% of the time. Don’t chase the dream — fold and live to play the next hand.',
                 ],
               },
               {
-                room: 'Mind Match',
-                tagline: 'Memory + zone-mapping',
+                room: 'Andar Bahar',
+                tagline: 'Side bias matters',
                 tips: [
-                  'Mentally divide the 4×4 grid into named quadrants (NW, NE, SW, SE). Track tiles by quadrant, not by position number.',
-                  'On your first turn, flip two tiles in the corners. Corner positions are easier to remember and your opponents reveal middle tiles, doing memory work for you.',
-                  'When ahead by 2 pairs in the late game, play conservatively · flip already-known tiles for guaranteed points instead of risky guesses.',
+                  'In IN7 Andar Bahar, Andar gets the first card — giving Andar a ~52% edge on game length. Default to Andar bets when uncertain.',
+                  'Skip side bets (first-card position pays 11×). House edge on side bets is 12-18%. Stick with the main bet.',
+                  'Don’t chase losses. Andar Bahar variance is high; a 5-loss streak feels rigged but is normal probability.',
+                ],
+              },
+              {
+                room: 'Dragon vs Tiger',
+                tagline: 'Boring is winning',
+                tips: [
+                  'Skip the Tie bet. House edge on Tie is ~32%. Stick with straight Dragon or Tiger bets where edge is under 4%.',
+                  'Don’t track patterns ("Dragon won 5 times so Tiger is due"). Each round is independent — gambler’s fallacy is real and expensive.',
+                  'Set a 10-round cap per session. Dragon vs Tiger settles fast and tilts even faster. Walk before chasing.',
                 ],
               },
               {
@@ -118,19 +127,28 @@ export default function In7TipsPage() {
                 ],
               },
               {
-                room: 'Tap Trail',
-                tagline: 'Eyes ahead, fingers behind',
+                room: 'Lucky 7',
+                tagline: 'Stay simple',
                 tips: [
-                  'Don’t look at the dot you’re tapping. Look two dots ahead. Your finger trains itself faster than your eyes.',
-                  'Keep your phone in landscape if your room allows. Wider thumb arc = faster trail completion.',
-                  'Skip the practice round when warm. The warm-up actually slows your reflexes by training a slower rhythm.',
+                  'Under 7 and Over 7 each have 15 winning outcomes — they are statistically tied. Pick whichever feels right and stick with it.',
+                  'The "Exactly 7" payout (4×) looks attractive but only hits 6 of 36 outcomes — a long-run negative bet.',
+                  'Pair bets (×5) and specific-pair (×30) are entertainment, not strategy. Use ₹50 max per session for them.',
+                ],
+              },
+              {
+                room: 'Mind Match',
+                tagline: 'Memory + zone-mapping',
+                tips: [
+                  'Mentally divide the 4×4 grid into named quadrants (NW, NE, SW, SE). Track tiles by quadrant, not by position number.',
+                  'On your first turn, flip two tiles in the corners. Corner positions are easier to remember and opponents reveal middle tiles for free.',
+                  'When ahead by 2 pairs in the late game, play conservatively. Flip already-known tiles for guaranteed points instead of risky guesses.',
                 ],
               },
               {
                 room: 'Spin Sevens',
                 tagline: 'The honest tip',
                 tips: [
-                  'Spin Sevens is pure luck. There’s no strategy. Use the daily free spin and stop there. Cash spins have a small house edge · fun for ₹50 a day, terrible as a primary game.',
+                  'Spin Sevens is pure luck. Use the daily free spin and stop there. Cash spins have a small house edge.',
                   'If you treat Spin Sevens as entertainment (₹100 budget per week), it stays fun. If you treat it as income, it ruins your bankroll.',
                 ],
               },
@@ -192,7 +210,7 @@ export default function In7TipsPage() {
           },
           {
             q: 'IN7 mein sabse profitable room kaunsa hai?',
-            a: 'Skill players ke liye Mind Match aur IN7 Rummy. Inka return-to-player ratio sabse zyada hai (~96-97%). Quick 21 medium (~95%). Spin Sevens recreational only · fun ke liye, profit ke liye nahi.',
+            a: 'Skill players ke liye IN7 Rummy aur Mind Match. RTP sabse zyada hai (~96-97%). Teen Patti aur Andar Bahar medium (~95%). Dragon vs Tiger aur Lucky 7 fast-paced casino — entertainment ke liye best, profit ke liye disciplined bankroll zaroori. Spin Sevens recreational only.',
           },
           {
             q: 'IN7 par bot use kar sakte hain?',
