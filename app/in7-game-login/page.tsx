@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     'in7 login not working',
     'in7 otp not coming',
     'in7 sign in',
+    'in 7 game login',
+    'in 7 game login download',
   ],
   openGraph: {
     title: 'IN7 Game Login · Quick OTP Sign-In Help',
@@ -107,6 +109,12 @@ export default function In7LoginPage() {
             @media (min-width: 720px) { .trb-grid { grid-template-columns: repeat(2, 1fr) !important; } }
           `}</style>
         </div>
+      </section>
+
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Account nahi hai abhi? <Link href="/in7-game-register" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Free register</Link> karein, ya app pehle <Link href="/in7-game-apk-download" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>download</Link> karein.
+        </p>
       </section>
 
       <FAQ

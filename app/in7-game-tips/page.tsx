@@ -201,6 +201,12 @@ export default function In7TipsPage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Teen Patti ke liye specific tips <Link href="/blog/teen-patti-winning-tips" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>is guide</Link> mein hain, aur saare games <Link href="/in7-gaming" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>IN7 gaming hub</Link> par.
+        </p>
+      </section>
+
       <FAQ
         title="IN7 tips & strategy · common sawaal"
         items={[

@@ -164,6 +164,12 @@ export default function PaiseKamaneWalaGamePage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Dosto ko refer karke kamayein, <Link href="/blog/in7-refer-and-earn-income" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>refer & earn guide</Link> padhein, ya jeete paise <Link href="/in7-game-withdrawal" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>withdraw</Link> karein.
+        </p>
+      </section>
+
       <FAQ
         title="Paise kamane wala game · sawaal jawab"
         items={[

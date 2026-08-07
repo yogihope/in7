@@ -124,6 +124,12 @@ export default function In7RegisterPage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Pehle se account hai? <Link href="/in7-game-login" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Login help</Link> dekhein, ya app pehle <Link href="/in7-game-apk-download" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>download</Link> karein.
+        </p>
+      </section>
+
       <FAQ
         title="IN7 register karne ke baad ke common doubts"
         items={[

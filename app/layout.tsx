@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileCTA from '@/components/MobileCTA';
 import LiveDrops from '@/components/LiveDrops';
+import BackToTop from '@/components/BackToTop';
+import SupportChat from '@/components/SupportChat';
 import { IN7_DOWNLOAD_URL } from '@/lib/constants';
 
 const SITE_URL = 'https://www.in7gaming.co';
@@ -47,6 +49,14 @@ export const metadata: Metadata = {
     'andar bahar online',
     'dragon vs tiger app',
     'rummy real money',
+    'in7 apk download for android',
+    'in 7 game login',
+    'in 7 game download',
+    'in 7 game login download',
+    'in7 game download play store',
+    'indian online gaming players',
+    'fast in7 game downloads',
+    'best gaming world in india',
   ],
   authors: [{ name: 'IN7 Gaming co.', url: SITE_URL }],
   creator: 'IN7 Gaming co.',
@@ -125,6 +135,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <LiveDrops />
         <MobileCTA />
+        <BackToTop />
+        <SupportChat />
         <Footer />
 
         <script

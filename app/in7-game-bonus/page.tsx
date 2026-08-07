@@ -136,6 +136,12 @@ export default function In7BonusPage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Bonus milne ke baad kahaan use karein? <Link href="/in7-gaming" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Saare IN7 games</Link> dekhein, ya <Link href="/in7-game-deposit" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>deposit guide</Link> padhein.
+        </p>
+      </section>
+
       <FAQ
         title="IN7 bonus ke common sawaal"
         items={[

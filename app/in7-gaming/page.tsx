@@ -167,6 +167,12 @@ export default function In7GamingPage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Andar Bahar ya Dragon vs Tiger, konsa try karein? <Link href="/blog/andar-bahar-vs-dragon-tiger" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Yahan compare kiya hai</Link>. Winning tips ke liye <Link href="/in7-game-tips" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>IN7 game tips</Link> dekhein.
+        </p>
+      </section>
+
       <FAQ
         title="IN7 gaming ke baare mein common doubts"
         items={[

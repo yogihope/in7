@@ -10,6 +10,7 @@ const NAV = [
   { href: '/in7-game-apk-download', label: 'Download' },
   { href: '/in7-game-bonus', label: 'Bonus' },
   { href: '/in7-game-review', label: 'Review' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
 ];
 

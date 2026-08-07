@@ -188,6 +188,12 @@ export default function In7WithdrawalPage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Poora fast-payout process <Link href="/blog/in7-withdrawal-fast-guide" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>is blog guide</Link> mein hai, ya pehle <Link href="/in7-game-deposit" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>deposit karein</Link>.
+        </p>
+      </section>
+
       <FAQ
         title="IN7 withdrawal ke sawaal jawab"
         items={[

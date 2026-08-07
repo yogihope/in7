@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { BLOG_POSTS } from '@/lib/blog';
 
 const BASE = 'https://www.in7gaming.co';
 
@@ -20,6 +21,7 @@ const ROUTES: Tier[] = [
   { path: '/in7-game-tips',            priority: 0.80, cf: 'weekly' },
   { path: '/how-to-play-in7',          priority: 0.78, cf: 'monthly' },
   { path: '/in7-game-refer-and-earn',  priority: 0.76, cf: 'monthly' },
+  { path: '/blog',                     priority: 0.70, cf: 'weekly' },
   { path: '/about',                    priority: 0.55, cf: 'monthly' },
   { path: '/contact',                  priority: 0.50, cf: 'monthly' },
   { path: '/privacy-policy',           priority: 0.30, cf: 'yearly' },
@@ -29,10 +31,17 @@ const ROUTES: Tier[] = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  return ROUTES.map((r) => ({
+  const staticRoutes = ROUTES.map((r) => ({
     url: `${BASE}${r.path}`,
     lastModified: now,
     changeFrequency: r.cf,
     priority: r.priority,
   }));
+  const blogRoutes = BLOG_POSTS.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.65,
+  }));
+  return [...staticRoutes, ...blogRoutes];
 }

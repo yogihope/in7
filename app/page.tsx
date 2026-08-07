@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import FAQ from '@/components/FAQ';
-import { IN7_DOWNLOAD_URL } from '@/lib/constants';
+import DownloadCard from '@/components/DownloadCard';
+import KeyFeatures from '@/components/KeyFeatures';
+import PlayerReviews from '@/components/PlayerReviews';
+import SpinWheel from '@/components/SpinWheel';
+import { IN7_DOWNLOAD_URL, REWARD_LINKS } from '@/lib/constants';
 
 export default function HomePage() {
   return (
@@ -38,6 +42,17 @@ export default function HomePage() {
                   <div className="stat-label">User rating</div>
                 </div>
               </div>
+
+              <div className="rise rise-delay-4" style={{ marginTop: 34 }}>
+                <p className="muted" style={{ fontSize: '0.88rem', fontWeight: 600, marginBottom: 10 }}>
+                  🎁 Unlock your ₹200–500 reward right away:
+                </p>
+                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                  <a href={REWARD_LINKS[0]} target="_blank" rel="noopener noreferrer" className="btn btn-primary">🎁 Unlock ₹200–500 Reward</a>
+                  <a href={REWARD_LINKS[1]} target="_blank" rel="noopener noreferrer" className="btn btn-ink">🎁 Unlock ₹200–500 Reward</a>
+                  <a href={REWARD_LINKS[2]} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">🎁 Unlock ₹200–500 Reward</a>
+                </div>
+              </div>
             </div>
 
             <div className="rise rise-delay-2" style={{ position: 'relative' }}>
@@ -58,6 +73,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── QUICK DOWNLOAD CARD ─── */}
+      <div className="wrap" style={{ marginTop: -12, marginBottom: 12 }}>
+        <DownloadCard />
+      </div>
 
       {/* ─── MARQUEE ─── */}
       <div className="marquee" aria-hidden>
@@ -121,6 +141,19 @@ export default function HomePage() {
       </section>
 
       <div className="wrap"><div className="divider-rule" /></div>
+
+      {/* ─── KEY FEATURES ─── */}
+      <section className="section" style={{ paddingBlock: 0, paddingTop: 64 }}>
+        <div className="wrap">
+          <div style={{ maxWidth: 640, margin: '0 auto 32px', textAlign: 'center' }}>
+            <span className="eyebrow">At a glance</span>
+            <h2 className="h-section" style={{ marginTop: 14 }}>Everything IN7 packs in.</h2>
+          </div>
+          <div style={{ maxWidth: 760, margin: '0 auto' }}>
+            <KeyFeatures />
+          </div>
+        </div>
+      </section>
 
       {/* ─── PRODUCT SHOWCASE ─── */}
       <section className="section">
@@ -195,12 +228,12 @@ export default function HomePage() {
               </ul>
               <Link href="/in7-game-bonus" className="btn btn-primary" style={{ marginTop: 28 }}>See all rewards →</Link>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              <div className="frame" style={{ marginTop: 20 }}>
+            <div>
+              <div className="frame" style={{ marginTop: 20, marginBottom: 20 }}>
                 <img src="/in7-game-bonus-offer.jpeg" alt="IN7 Game ₹777 welcome bonus offer · IN7 gaming bonus" title="IN7 Game bonus" width={800} height={800} loading="lazy" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
-              <div className="frame-rust">
-                <img src="/in7-game-spin-wheel.jpeg" alt="IN7 Game daily spin wheel · IN7 lucky bonus spin" title="IN7 spin wheel" width={800} height={800} loading="lazy" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <div className="frame-rust" style={{ padding: '32px 16px' }}>
+                <SpinWheel />
               </div>
             </div>
           </div>
@@ -252,6 +285,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── PLAYER REVIEWS ─── */}
+      <PlayerReviews />
 
       {/* ─── FAQ ─── */}
       <FAQ

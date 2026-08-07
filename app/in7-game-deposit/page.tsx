@@ -170,6 +170,12 @@ export default function In7DepositPage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Deposit ke baad paisa nikalna ho to <Link href="/in7-game-withdrawal" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>withdrawal guide</Link> dekhein, ya <Link href="/in7-game-bonus" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>bonus & rewards</Link> ke baare mein jaanein.
+        </p>
+      </section>
+
       <FAQ
         title="IN7 deposit ke sawaal jawab"
         items={[

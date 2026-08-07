@@ -208,6 +208,12 @@ export default function HowToPlayIn7Page() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Game choose karne mein confuse ho? <Link href="/blog/andar-bahar-vs-dragon-tiger" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Andar Bahar vs Dragon Tiger</Link> compare padhein, ya seedha <Link href="/in7-game-register" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>register</Link> karke try karein.
+        </p>
+      </section>
+
       <FAQ
         title="IN7 gameplay ke common sawaal"
         items={[

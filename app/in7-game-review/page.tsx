@@ -142,6 +142,12 @@ export default function In7ReviewPage() {
         </div>
       </section>
 
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Safe aur responsible tarike se khelna chahte hain? <Link href="/blog/responsible-gaming-in7" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Responsible gaming guide</Link> padhein, ya <Link href="/in7-game-bonus" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>bonus & rewards</Link> explore karein.
+        </p>
+      </section>
+
       <FAQ
         title="Review pe common sawaal"
         items={[

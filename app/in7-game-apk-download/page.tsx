@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FAQ from '@/components/FAQ';
+import DownloadCard from '@/components/DownloadCard';
 import { IN7_DOWNLOAD_URL } from '@/lib/constants';
 import { breadcrumbJsonLd, webPageJsonLd, jsonLdScript, SITE_URL } from '@/lib/seo';
 
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
     'in7 game online apk',
     'in7 latest apk',
     'in7 apk free download',
+    'in7 apk download for android',
+    'in 7 game download',
+    'in7 game download play store',
+    'fast in7 game downloads',
   ],
   openGraph: {
     title: 'IN7 Game APK Download · Latest IN7 APK v4.7 Free',
@@ -58,6 +63,10 @@ export default function In7DownloadPage() {
               <a href={IN7_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg pulse-cta">↓ Download IN7 APK</a>
               <Link href="/in7-game-app" className="btn" style={{ background: 'transparent', color: '#fff8f3', border: '1px solid rgba(255,248,243,0.25)' }}>What’s inside →</Link>
             </div>
+          </div>
+
+          <div style={{ marginTop: 28 }}>
+            <DownloadCard label="Last update · Apr 2026" title="IN7 Game APK v4.7.1 download" />
           </div>
         </div>
       </section>
@@ -133,6 +142,12 @@ export default function In7DownloadPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="wrap" style={{ paddingBottom: 8 }}>
+        <p className="muted" style={{ fontSize: '0.92rem' }}>
+          Naye ho? Poora walkthrough <Link href="/blog/in7-apk-download-guide" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>IN7 APK download guide</Link> par padhein, ya seedha <Link href="/in7-game-register" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>register</Link> karke shuru karein.
+        </p>
       </section>
 
       <FAQ
