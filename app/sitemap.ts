@@ -22,6 +22,7 @@ const ROUTES: Tier[] = [
   { path: '/how-to-play-in7',          priority: 0.78, cf: 'monthly' },
   { path: '/in7-game-refer-and-earn',  priority: 0.76, cf: 'monthly' },
   { path: '/blog',                     priority: 0.70, cf: 'weekly' },
+  { path: '/partners',                 priority: 0.60, cf: 'monthly' },
   { path: '/about',                    priority: 0.55, cf: 'monthly' },
   { path: '/contact',                  priority: 0.50, cf: 'monthly' },
   { path: '/privacy-policy',           priority: 0.30, cf: 'yearly' },

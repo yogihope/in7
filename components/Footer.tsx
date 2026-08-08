@@ -27,6 +27,7 @@ export default function Footer() {
               <li><Link href="/in7-game-tips">Tips &amp; tricks</Link></li>
               <li><Link href="/in7-game-review">Honest review</Link></li>
               <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/partners">More games &amp; partners</Link></li>
             </ul>
           </div>
 

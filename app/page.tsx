@@ -5,6 +5,7 @@ import KeyFeatures from '@/components/KeyFeatures';
 import PlayerReviews from '@/components/PlayerReviews';
 import SpinWheel from '@/components/SpinWheel';
 import { IN7_DOWNLOAD_URL, REWARD_LINKS } from '@/lib/constants';
+import { PARTNER_SITES } from '@/lib/partners';
 
 export default function HomePage() {
   return (
@@ -316,6 +317,42 @@ export default function HomePage() {
           },
         ]}
       />
+
+      {/* ─── PARTNER SITES ─── */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <span className="eyebrow">More to explore</span>
+          <h2 className="h-section balance" style={{ marginTop: 14, maxWidth: 720 }}>
+            Aur bhi trusted gaming sites &amp; apps
+          </h2>
+          <p className="muted" style={{ marginTop: 14, fontSize: '0.98rem', lineHeight: 1.65, maxWidth: 600 }}>
+            IN7 ke saath saath ye platforms bhi Indian players explore karte hain — casino tables, APK libraries aur
+            download hubs. Poori list <Link href="/partners">partners page</Link> par hai.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 24 }}>
+            {PARTNER_SITES.map((site) => (
+              <a
+                key={site.url}
+                href={site.url}
+                target="_blank"
+                rel="noopener"
+                title={site.tagline}
+                className="no-deco"
+                style={{
+                  padding: '8px 16px',
+                  border: '1px solid rgba(20,7,10,0.14)',
+                  borderRadius: 999,
+                  fontSize: '0.88rem',
+                  color: '#14070a',
+                  background: '#fff',
+                }}
+              >
+                {site.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ─── FINAL CTA ─── */}
       <section className="section ink-section">

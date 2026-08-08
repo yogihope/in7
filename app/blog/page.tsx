@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BLOG_POSTS } from '@/lib/blog';
+import { PARTNER_SITES } from '@/lib/partners';
 import { breadcrumbJsonLd, webPageJsonLd, jsonLdScript } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -55,6 +56,24 @@ export default function BlogIndexPage() {
           @media (min-width: 720px) { .blog-grid { grid-template-columns: repeat(2, 1fr) !important; } }
           @media (min-width: 1080px) { .blog-grid { grid-template-columns: repeat(3, 1fr) !important; } }
         `}</style>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <h2 className="h-section" style={{ maxWidth: 720 }}>Recommended gaming sites</h2>
+          <p className="muted" style={{ marginTop: 12, fontSize: '0.95rem', lineHeight: 1.6, maxWidth: 600 }}>
+            Blog readers ye partner platforms bhi explore karte hain:
+          </p>
+          <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 24px', listStyle: 'none', padding: 0, marginTop: 18 }}>
+            {PARTNER_SITES.map((site) => (
+              <li key={site.url}>
+                <a href={site.url} target="_blank" rel="noopener" title={site.tagline}>
+                  {site.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <script

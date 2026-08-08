@@ -1,7 +1,7 @@
 // Single source of truth for the IN7 affiliate download URL.
 // Update here and every Download CTA picks it up.
 export const IN7_DOWNLOAD_URL =
-  'https://acc.in7game.org/api/web/share/index.html?ic=AA6JXC91&ts=1777216140&m=2&lang=en&id=1';
+  'https://share.in7game.org/web/share/index.html?ic=SAW6KEVM&ts=1786207620&m=1&lang=en&id=1';
 
 // Hero "unlock reward" agent share links.
 export const REWARD_LINKS = [

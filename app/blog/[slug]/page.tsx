@@ -9,6 +9,29 @@ export function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
 }
 
+// Renders [label](url) inline links inside body paragraphs.
+// External urls become dofollow anchors, internal paths use <Link>.
+function renderParagraph(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    const [, label, href] = match;
+    if (href.startsWith('/')) {
+      return (
+        <Link key={i} href={href} style={{ color: '#b91c2c', textDecoration: 'underline' }}>
+          {label}
+        </Link>
+      );
+    }
+    return (
+      <a key={i} href={href} target="_blank" rel="noopener" style={{ color: '#b91c2c', textDecoration: 'underline' }}>
+        {label}
+      </a>
+    );
+  });
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -68,13 +91,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div style={{ maxWidth: 680 }}>
             {post.body.map((para, i) => (
               <p key={i} className="muted" style={{ fontSize: '1.02rem', lineHeight: 1.75, marginTop: i === 0 ? 0 : 20, color: 'rgba(20,7,10,0.8)' }}>
-                {para}
+                {renderParagraph(para)}
               </p>
             ))}
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 32 }}>
               <a href={IN7_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary pulse-cta">↓ Download IN7 APK</a>
               <Link href={post.relatedHref} className="btn btn-ghost">{post.relatedLabel}</Link>
+              {post.externalHref && (
+                <a href={post.externalHref} target="_blank" rel="noopener" className="btn btn-ghost">
+                  {post.externalLabel} →
+                </a>
+              )}
             </div>
           </div>
         </div>
