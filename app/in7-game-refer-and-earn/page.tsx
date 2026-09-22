@@ -176,7 +176,7 @@ export default function In7ReferEarnPage() {
 
       <section className="wrap" style={{ paddingBottom: 8 }}>
         <p className="muted" style={{ fontSize: '0.92rem' }}>
-          Zyada refers convert karne ke tarike <Link href="/blog/in7-refer-and-earn-income" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>is guide</Link> mein hain, ya <Link href="/paise-kamane-wala-game" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>paise kamane wala game</Link> explore karein.
+          Zyada refers convert karne ke tarike <Link href="/blog" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>is guide</Link> mein hain, ya <Link href="/paise-kamane-wala-game" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>paise kamane wala game</Link> explore karein.
         </p>
       </section>
 

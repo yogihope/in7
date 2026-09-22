@@ -21,6 +21,7 @@ export default function Footer() {
             <h4>The Game</h4>
             <ul>
               <li><Link href="/in7-gaming">IN7 Gaming hub</Link></li>
+              <li><Link href="/in7-game">IN7 Game</Link></li>
               <li><Link href="/in7-game-app">The IN7 App</Link></li>
               <li><Link href="/in7-game-apk-download">Download APK</Link></li>
               <li><Link href="/how-to-play-in7">How to play IN7</Link></li>

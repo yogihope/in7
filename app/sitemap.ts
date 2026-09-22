@@ -9,6 +9,7 @@ type Tier = { path: string; priority: number; cf: 'daily' | 'weekly' | 'monthly'
 const ROUTES: Tier[] = [
   { path: '',                          priority: 1.0,  cf: 'daily' },
   { path: '/in7-game-apk-download',    priority: 0.95, cf: 'weekly' },
+  { path: '/in7-game',                 priority: 0.92, cf: 'weekly' },
   { path: '/in7-gaming',               priority: 0.92, cf: 'weekly' },
   { path: '/in7-game-app',             priority: 0.92, cf: 'weekly' },
   { path: '/paise-kamane-wala-game',   priority: 0.90, cf: 'weekly' },

@@ -40,7 +40,6 @@ export default function BlogIndexPage() {
               <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card no-deco">
                 <div className="bc-cover" aria-hidden>IN7</div>
                 <div className="bc-body">
-                  <span className="bc-cat">{post.category}</span>
                   <h2 className="bc-title">{post.title}</h2>
                   <p className="bc-excerpt">{post.excerpt}</p>
                   <div className="bc-meta">

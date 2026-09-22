@@ -1,424 +1,595 @@
+// Blog content. Paragraph, list and table strings support inline
+// [label](url) links and **bold**; internal paths render as <Link>.
+export type BlogBlock =
+  | { h2: string }
+  | { h3: string }
+  | { p: string }
+  | { ul: string[] }
+  | { table: { head: string[]; rows: string[][] } };
+
 export type BlogPost = {
   slug: string;
   title: string;
-  category: string;
   date: string;
   excerpt: string;
-  keywords: string[];
-  // Paragraphs support inline markdown-style links: [label](url).
-  // External urls render as dofollow anchors, internal paths as <Link>.
-  body: string[];
-  relatedHref: string;
-  relatedLabel: string;
-  externalHref?: string;
-  externalLabel?: string;
+  blocks: BlogBlock[];
+  faqs: { q: string; a: string }[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: 'in7-apk-download-guide',
-    title: 'IN7 Game APK Kaise Download Karein — Step-by-Step Guide',
-    category: 'Getting started',
-    date: '2026-07-02',
-    excerpt: 'IN7 apk download karne ka sabse safe tarika, unknown sources enable karne se lekar pehli install tak, poora process yahan.',
-    keywords: ['in7 apk download for android', 'in7 game apk', 'in7 game download play store', 'in7 apk download'],
-    body: [
-      'IN7 apk download karna aur install karna do minute ka kaam hai, bas process thoda different hai Play Store apps se. IN7 ek APK file ke through distribute hoti hai, isliye phone settings mein ek chhota sa step extra karna padta hai.',
-      'Sabse pehle IN7 ki official download page se “Download IN7 APK” button dabayein. File size ~48 MB hai, to Wi-Fi par download karna fast rahega. Download complete hone ke baad, apni Downloads folder kholein aur IN7.apk file par tap karein.',
-      'Agar phone “Install blocked” dikhaye, to Settings → Security (ya Apps) mein jaake “Install unknown apps” ya “Unknown sources” ko us browser/file manager ke liye allow kar dein jisse aap install kar rahe hain. Ye Android ka standard safety step hai, sirf ek baar karna padta hai.',
-      'Install hone ke baad app open karein, mobile number se register karein, aur OTP verify karte hi aap pehle table par ready ho jaate hain. Poora register flow humne alag se cover kiya hai /in7-game-register page par.',
+    "slug": "why-we-keep-playing-games-after-losing",
+    "title": "Why Do We Keep Playing Games on IN7 Gaming After Losing Again and Again",
+    "date": "2026-09-22",
+    "excerpt": "You lose once on IN7 Gaming and think, “Chalo, ek aur game.”",
+    "blocks": [
+      {
+        "p": "You lose once on [IN7 Gaming](/) and think, “Chalo, ek aur game.”"
+      },
+      {
+        "p": "Then you lose again."
+      },
+      {
+        "p": "And again."
+      },
+      {
+        "p": "Before you know it, one small game has turned into a full hour of trying to fix that one bad result. The funny part is that you started playing for fun. But after a few losses, something changes. You are no longer playing because you are enjoying yourself. You are playing because you need to win."
+      },
+      {
+        "p": "And that brings us to a pretty interesting question."
+      },
+      {
+        "p": "Why does losing sometimes make us play more instead of simply closing the game?"
+      },
+      {
+        "p": "There can be a lot going on at the same time. Frustration, competition, habit, unfinished goals, attachment to the game, and that tiny hope that the next round will finally go your way."
+      },
+      {
+        "p": "“Bas ek win aur, phir pakka band karunga.”"
+      },
+      {
+        "p": "This happens, right?"
+      },
+      {
+        "p": "Let’s look at why this happens without turning it into some heavy psychology lecture."
+      },
+      {
+        "h2": "The First Loss Does Not Feel Like A Big Deal"
+      },
+      {
+        "p": "One loss is easy to ignore. Most players do not suddenly think something is wrong after one bad round. They simply assume the next one will be better."
+      },
+      {
+        "h3": "We Usually Think The Next Game Will Fix It"
+      },
+      {
+        "p": "Right after losing, the brain naturally looks for another chance."
+      },
+      {
+        "p": "“Koi nahi, next wala jeet jayenge.”"
+      },
+      {
+        "p": "It feels reasonable. Maybe you made one bad move. Maybe the opponent got lucky. Maybe you were distracted. So you start again. That one loss can actually make you want to continue because winning the next game feels like an easy way to get back on track."
+      },
+      {
+        "h3": "Then The Second Loss Feels Personal"
+      },
+      {
+        "p": "The second loss can hit differently."
+      },
+      {
+        "p": "Now you start thinking about what went wrong. Was it your decision? The opponent? Your internet? Bad luck? The game that was supposed to be entertainment slowly becomes something you want to fix."
+      },
+      {
+        "h2": "We Hate Leaving Things Unfinished"
+      },
+      {
+        "p": "**There is something uncomfortable about walking away from a game after losing:**"
+      },
+      {
+        "h3": "The Brain Wants A Different Ending"
+      },
+      {
+        "p": "Think about watching a movie and stopping five minutes before the ending. It feels incomplete. A loss can create a similar feeling. If you finish your session after winning, you can leave feeling satisfied. If you stop after losing, there is often this little voice saying, “Wait, one more.” You feel like the story should have ended differently. And one more game feels like it could give you that ending."
+      },
+      {
+        "h3": "One Win Starts Feeling Like Closure"
+      },
+      {
+        "p": "The funny thing is, you usually do not want to play five more games. You just want one win. One win can feel like it will erase the frustration from the previous losses. “Game band karna problem nahi hai. Haar ke band karna problem lagta hai.”"
+      },
+      {
+        "h2": "Losing Can Trigger the Need To Prove Yourself"
+      },
+      {
+        "p": "**Games can become connected to confidence, too:**"
+      },
+      {
+        "h3": "Nobody Wants to Feel They Are Getting Worse"
+      },
+      {
+        "p": "After several losses, you may start questioning your own ability. “Am I actually bad at this?” Instead of closing the game, you may keep playing because you want to prove to yourself that you can still win. It is not always about the score anymore. It becomes personal."
+      },
+      {
+        "h3": "The Next Match Becomes A Challenge"
+      },
+      {
+        "p": "The question changes from “Am I enjoying this?” to “Can I win this one?” You may start caring more about your rank, points, progress, or score. That can make the next match feel much more important than it really is. And once the pressure goes up, the game can feel completely different."
+      },
+      {
+        "h3": "The Dangerous Little Thought Called ‘One More Game’"
+      },
+      {
+        "p": "“One more game” sounds harmless. And honestly, sometimes it is. When you are playing on [IN7 Gaming](/), one more game can easily turn into another one more. The problem is when one more keeps becoming another one more."
+      },
+      {
+        "h3": "One More Game Rarely Feels Like A Big Decision"
+      },
+      {
+        "p": "You are already sitting there. You are already logged in. The game is already open. Starting another round takes almost no effort. Stopping means putting the phone down, getting up, and doing something else. So naturally, starting again can feel easier."
+      },
+      {
+        "h2": "Tilt Can Quietly Change How You Play"
+      },
+      {
+        "p": "Gamers often use the word tilt when frustration starts affecting the way they play. You do not suddenly become a completely different person. Your decisions just start changing."
+      },
+      {
+        "h3": "You Stop Playing The Same Way"
+      },
+      {
+        "p": "You might become too aggressive because you desperately want a win. Or you might become nervous and play too carefully. You may rush decisions you normally think through. The more frustrated you become, the harder it can be to play calmly."
+      },
+      {
+        "h3": "Then The Loss Feels Like Proof"
+      },
+      {
+        "p": "**It can turn into a loop:**"
+      },
+      {
+        "p": "Lose → get frustrated → play differently → lose again → get even more frustrated."
+      },
+      {
+        "p": "Then you start thinking, “See, today is just not my day.” Of course, not every losing streak comes from tilt. Sometimes the opponents are genuinely better. Matchmaking can affect results. Connection problems can matter. Random events can change outcomes. Your actual skill level can also be part of it."
+      },
+      {
+        "h3": "Your Mood Can Become Part Of The Game"
+      },
+      {
+        "p": "Your gaming mood does not exist separately from the rest of your day. If you are tired, stressed, or distracted after work or college, even a normal loss can feel much worse. “Kabhi kabhi problem game mein kam, mood mein zyada hoti hai.” That is worth remembering before blaming yourself or the game for everything."
+      },
+      {
+        "h2": "We Also Get Attached To The Game Itself"
+      },
+      {
+        "p": "Not every long gaming session after a loss is about frustration. Sometimes you simply like the game. You know the controls. You know the characters. You know the maps. You know what you are doing. There is comfort in familiarity. Some games also become connected to memories and daily routines. After work, college or other responsibilities, opening the same game can become almost automatic."
+      },
+      {
+        "p": "That is where something like the [IN7 game app](/in7-game-app) can fit into the bigger picture of online gaming. When a game is easy to access and always available, jumping back in takes very little effort. And that can be convenient. It can also make it easier to say, “Bas ek aur.”"
+      },
+      {
+        "h2": "When The Money or Effort Already Spent Starts Talking"
+      },
+      {
+        "p": "There is another reason people sometimes struggle to stop. They think about everything they have already put into the game. Maybe it was hours of playing. Maybe it was progress they built slowly. Maybe they spent money. The thought becomes simple."
+      },
+      {
+        "p": "“Itna time diya hai, ab chhod kaise du?” This is often called sunk cost. In simple words, you feel that because you have already invested so much, you should keep going. But the time or money already spent cannot be recovered simply by continuing. Sometimes continuing makes sense because you genuinely still enjoy the game. Continuing only because you feel you have to recover what you already lost is a different situation."
+      },
+      {
+        "h2": "Why Online Games Make This Feeling Even Stronger"
+      },
+      {
+        "p": "Online games have one major difference from many other forms of entertainment."
+      },
+      {
+        "p": "**There is usually no natural ending:**"
+      },
+      {
+        "h3": "There Is Always Another Round Waiting"
+      },
+      {
+        "p": "The movie ends. A book reaches the last page. An online game can simply give you another match. You finish one round, and another one is sitting there. That tiny gap makes it easy to continue without really thinking about whether you want to."
+      },
+      {
+        "h3": "Downloading Makes The Game Part Of Your Routine"
+      },
+      {
+        "p": "When a game is available on your phone, it can become part of everyday life."
+      },
+      {
+        "p": "An **IN7 game download** or [IN7 APK download](/in7-game-apk-download) can make access simple for players who use the platform. **For Android** users looking at an **IN7 APK download**, it is important to use legitimate and trusted sources rather than random files from unknown websites."
+      },
+      {
+        "h2": "You Keep Changing Your Goal"
+      },
+      {
+        "p": "**Maybe you started with:**"
+      },
+      {
+        "p": "“I will play for 20 minutes.”"
+      },
+      {
+        "p": "Then it becomes"
+      },
+      {
+        "p": "“I will play until I win.”"
+      },
+      {
+        "p": "Then"
+      },
+      {
+        "p": "“I will recover everything I lost.”"
+      },
+      {
+        "p": "Then"
+      },
+      {
+        "p": "“I cannot stop on this loss.”"
+      },
+      {
+        "p": "See what happened? The goal kept moving."
+      },
+      {
+        "h2": "Where IN7 fits into the picture"
+      },
+      {
+        "p": "The [IN7 game](/) app is an example of how easy-access online gaming can fit into a person's routine. With an **IN7 game online** experience available, players can move from one session to another with very little interruption."
+      },
+      {
+        "p": "That convenience can be useful, but it also makes the “just one more round” cycle easier to fall into. If you are getting started through an **IN7 game download** or an **IN7 APK download**, the same basic idea applies. Easy access does not have to mean endless play."
+      },
+      {
+        "p": "If a game involves money or rewards, it is especially important not to treat repeated play as a way to recover losses. A previous loss does not become easier to recover just because you keep playing."
+      },
+      {
+        "h3": "End Note"
+      },
+      {
+        "p": "Losing one game is normal. Losing five and still saying, “Bas ek aur,” is where things get interesting. Games are supposed to give you a break, some competition, and a bit of fun. They do not have to become a personal battle against the last result. Sometimes another round is exactly what you want. And sometimes the best move is simply closing the app, taking a break, and coming back another day. Either way, the important part is knowing why you are still playing."
+      }
     ],
-    relatedHref: '/in7-game-apk-download',
-    relatedLabel: 'Full IN7 APK download page →',
+    "faqs": [
+      {
+        "q": "Is it normal to keep playing when I keep losing?",
+        "a": "Yes. Many players enjoy the challenge and keep playing to improve."
+      },
+      {
+        "q": "Why is it hard to stop after losing a ranked match?",
+        "a": "You may want to recover lost points or protect your rank."
+      },
+      {
+        "q": "Why do I keep playing even when I am frustrated?",
+        "a": "Habit, competition, and the hope of winning can make it difficult to stop."
+      }
+    ]
   },
   {
-    slug: 'teen-patti-winning-tips',
-    title: 'Teen Patti Jeetne Ke 7 Practical Tips',
-    category: 'Strategy',
-    date: '2026-07-10',
-    excerpt: 'Bluff, table reading, aur bankroll management, IN7 ki Teen Patti tables par jeetne ke chances badhane ke liye 7 kaam ki tips.',
-    keywords: ['in7 teen patti', 'teen patti real money', 'in7 game tips'],
-    body: [
-      'Teen Patti luck ka game lagta hai, lekin lambe session mein skill hi fark banata hai. IN7 par khelte waqt ye 7 cheezein dhyan mein rakhein.',
-      '1. Chhoti stakes se shuru karein jab tak table ka rhythm samajh na aa jaaye. 2. Boot amount se zyada risk kabhi na lein ek hi hand mein. 3. Consistent bluffing pattern na banayein, warna experienced players usse padh lenge.',
-      '4. Apna bankroll pehle se set karein, aur us limit ko cross na karein, jeet ho ya haar. 5. Side-show ka option strategically use karein, sirf tab jab aapka hand strong ho. 6. Table ke baaki players ke betting pattern par nazar rakhein, wahi sabse bada signal hota hai.',
-      '7. Break lein. Lagatar khelne se decision quality gir jaati hai. IN7 ki free-practice tables par naye patterns try karke confidence build karein, phir cash room mein move karein. Poori beginner-to-pro guide /in7-game-tips page par hai.',
+    "slug": "how-to-play-rummy-online-basic-rules",
+    "title": "How to Play Rummy Online on IN7 Gaming and Understand the Basic Rules",
+    "date": "2026-09-22",
+    "excerpt": "You may know how cards work. You may even have played rummy with friends or family. But the first time you open an online rummy table on IN7 Gaming, things can feel a little confusing. Cards are being dealt, everyone is picking and throwing cards, and suddenly you are wondering, “Bhai, karna kya hai?”",
+    "blocks": [
+      {
+        "p": "You may know how cards work. You may even have played rummy with friends or family. But the first time you open an online rummy table on IN7 Gaming, things can feel a little confusing. Cards are being dealt, everyone is picking and throwing cards, and suddenly you are wondering, “Bhai, karna kya hai?”"
+      },
+      {
+        "p": "The good thing is that rummy is much simpler once you understand how the cards need to be arranged. Indian rummy generally revolves around making valid sequences and sets before you declare. Once you understand these combinations, the rest of the game starts making sense."
+      },
+      {
+        "p": "So, let’s go from the very beginning and understand how the whole thing works. Pehle rules samajh lo, phir game khelna kaafi easy lagta hai."
+      },
+      {
+        "h2": "First, Get the Basic Idea of Rummy"
+      },
+      {
+        "p": "Before you sit at an online table, get these basic things clear. You do not need to memorise a huge rulebook."
+      },
+      {
+        "p": "**Just understand what you are trying to make with your cards:**"
+      },
+      {
+        "ul": [
+          "The main goal is to arrange your cards into valid combinations.",
+          "The two combinations you will hear about most are sequences and sets.",
+          "A sequence is made using consecutive cards, usually from the same suit.",
+          "A set contains cards of the same rank but from different suits.",
+          "Simply collecting cards of the same suit or the same number is not enough.",
+          "Your complete hand needs to meet the conditions required for a valid declaration."
+        ]
+      },
+      {
+        "h3": "What You Are Actually Trying to Do"
+      },
+      {
+        "p": "In a standard Indian rummy game, you usually get 13 cards. Your job is to arrange those cards into proper groups. For example, if you have 4, 5, and 6 of Hearts, you already have a sequence. If you have 8 of Hearts, 8 of Clubs, and 8 of Spades, that can form a set. The trick is to look at your entire hand and slowly figure out which cards can work together."
+      },
+      {
+        "h3": "The Cards You Get at the Start"
+      },
+      {
+        "p": "**The usual Indian rummy format uses 13 cards for each player. The four basic suits are:**"
+      },
+      {
+        "ul": [
+          "Hearts (Paan)",
+          "Diamonds (Eent)",
+          "Clubs (Chidi)",
+          "Spades (Hukum)"
+        ]
+      },
+      {
+        "p": "You will also find cards from Ace (Ikka) to King (Badshah). Ace can be used in different ways, depending on the rummy rules. Jokers can also be used to complete sets or sequences by replacing missing cards. The number of cards, players, and rules may change in different rummy games. So, always check the table rules before you start playing."
+      },
+      {
+        "h3": "Learn the Two Combinations You Cannot Ignore"
+      },
+      {
+        "p": "Once you can spot sequences and sets, the game becomes much easier. Instead of seeing 13 random cards, you start seeing possible combinations. Let’s see how it works:"
+      },
+      {
+        "h3": "How a Sequence Works"
+      },
+      {
+        "p": "A sequence means consecutive cards arranged in order."
+      },
+      {
+        "p": "**For example:**"
+      },
+      {
+        "p": "4♥ 5♥ 6♥"
+      },
+      {
+        "p": "When these cards come one after another and belong to the same suit, they form a sequence. A pure sequence is made using only the original cards, without using a joker. An impure sequence uses a joker to replace a missing card and complete the sequence."
+      },
+      {
+        "p": "**For example, if you have:**"
+      },
+      {
+        "p": "4♥ 5♥ Joker, the joker may help complete the sequence as 6♥ under applicable rules."
+      },
+      {
+        "h3": "How a Set Works"
+      },
+      {
+        "p": "A set is a group of cards having the same number or rank but different suits."
+      },
+      {
+        "p": "**For example:**"
+      },
+      {
+        "p": "8♥ 8♣ 8♠"
+      },
+      {
+        "p": "That can form a set."
+      },
+      {
+        "p": "The suits are different, while the rank is the same. Something like 8♥ 8♥ 8♣ would not be a standard set because the same card cannot simply be repeated from the same deck."
+      },
+      {
+        "h2": "The Pure Sequence Rule Beginners Mostly Miss"
+      },
+      {
+        "p": "A pure sequence is one of the first things beginners should look for. It is generally a sequence made without using a joker as a substitute."
+      },
+      {
+        "p": "**For example:**"
+      },
+      {
+        "p": "7♠ 8♠ 9♠"
+      },
+      {
+        "p": "That is a simple pure sequence. A longer sequence can work too, such as:"
+      },
+      {
+        "p": "3♦ 4♦ 5♦ 6♦"
+      },
+      {
+        "p": "Many new players get excited after making a couple of sets and forget to check whether they have the required sequence structure. Yahin pe kaafi beginners ka game ulajh jata hai. So, when you first look at your cards, check for a pure sequence before getting too attached to other combinations."
+      },
+      {
+        "h2": "How a Normal Turn Works on IN7 Gaming"
+      },
+      {
+        "p": "Once the game begins, the turn-by-turn process is pretty straightforward."
+      },
+      {
+        "p": "**You pick a card, think about your combinations, then discard a card:**"
+      },
+      {
+        "h3": "Draw One Card"
+      },
+      {
+        "p": "During your turn, you normally pick one card. Depending on the format, you may be able to pick from the closed deck or the open discard pile. The discard pile is useful because you can see what cards other players have thrown away. This can sometimes give you clues about what they may or may not be collecting. But don't overthink it in your first few games."
+      },
+      {
+        "h3": "Arrange Your Cards"
+      },
+      {
+        "p": "Online rummy tables usually let you arrange your cards on the screen. You can group cards by suit or place cards together when they look like possible sequences and sets."
+      },
+      {
+        "p": "**For example, you might keep:**"
+      },
+      {
+        "p": "4♥ 5♥ together because you are looking for 3♥ or 6♥. You might keep three 8s together because they could become a set. And if your first few cards look completely random, chill. That happens."
+      },
+      {
+        "h3": "Discard One Card"
+      },
+      {
+        "p": "After drawing a card, you generally need to discard one. Look for cards that are not helping you build a realistic sequence or set. But don't throw cards randomly. A card you don't need could be exactly what another player is waiting for. For beginners, the main thing is to understand the flow rather than trying to master advanced tricks immediately."
+      },
+      {
+        "h2": "How to Read Your 13 Cards Without Getting Confused"
+      },
+      {
+        "p": "Thirteen cards may seem like a lot when you are new to rummy. The easiest way to manage them is to divide your cards into smaller groups."
+      },
+      {
+        "p": "**Let’s see how:**"
+      },
+      {
+        "h3": "Start by Looking for a Pure Sequence"
+      },
+      {
+        "p": "First, scan your cards for consecutive cards from the same suit."
+      },
+      {
+        "p": "**For example:**"
+      },
+      {
+        "p": "5♣ 6♣ 7♣"
+      },
+      {
+        "p": "If you spot something like this, keep it together. Having one clear sequence can give the rest of your hand more structure."
+      },
+      {
+        "h3": "Then Look for Another Sequence"
+      },
+      {
+        "p": "**Now check the remaining cards. Maybe you have:**"
+      },
+      {
+        "p": "9♦ 10♦ and need an 8♦ or J♦ to complete a sequence."
+      },
+      {
+        "p": "Your first arrangement does not have to be your final arrangement. Every time you draw a new card, your possible combinations can change."
+      },
+      {
+        "h3": "Use the Remaining Cards for Sets"
+      },
+      {
+        "p": "Once you have looked for sequences, check the cards that are left."
+      },
+      {
+        "p": "**For example:**"
+      },
+      {
+        "p": "Q♥ Q♣ Q♠ could form a set. Jokers may also help complete some combinations according to the applicable game rules."
+      },
+      {
+        "h3": "Keep Checking Your Hand"
+      },
+      {
+        "p": "Do not treat your groups as fixed forever. A new card can completely change how your hand should be arranged. So, after every draw, take a quick look again. Maybe the card you just picked completes a sequence. Maybe it means a different card should now be discarded. That small habit can make the game much easier to understand."
+      },
+      {
+        "h2": "What Jokers Actually Do"
+      },
+      {
+        "p": "**Jokers are basically useful substitutes. Suppose you have:**"
+      },
+      {
+        "p": "6♣ 7♣ Joker. The joker may be used as 8♣ to complete an impure sequence, depending on the rules. A joker can also help complete certain sets or other combinations where the format allows it. But remember one thing. A joker does not magically make every group valid. If you are still learning, understand normal sequences and sets first. Once those are clear, jokers become much easier to use."
+      },
+      {
+        "h2": "How to Play Rummy on IN7 Gaming Step by Step"
+      },
+      {
+        "p": "Here is the simple version of how to play rummy on IN7 Gaming:"
+      },
+      {
+        "table": {
+          "head": [
+            "Step",
+            "What to Do"
+          ],
+          "rows": [
+            [
+              "Choose a game",
+              "Check the rummy format and table rules"
+            ],
+            [
+              "Open your account",
+              "[Register](/in7-game-register) or use your existing login"
+            ],
+            [
+              "Enter the table",
+              "Understand the cards, discard pile, and turn indicator"
+            ],
+            [
+              "Arrange your hand",
+              "Look for sequences and sets"
+            ],
+            [
+              "Draw a card",
+              "Pick from the available options according to the rules"
+            ],
+            [
+              "Recheck your cards",
+              "See whether the new card improves your combinations"
+            ],
+            [
+              "Discard a card",
+              "Remove a card that is less useful"
+            ],
+            [
+              "Build your hand",
+              "Continue arranging your cards"
+            ],
+            [
+              "Check before declaring",
+              "Make sure your groups meet the required conditions"
+            ],
+            [
+              "Declare",
+              "Submit only when your hand is valid"
+            ]
+          ]
+        }
+      },
+      {
+        "h2": "Complete the Basic Login and Account Steps"
+      },
+      {
+        "p": "If you are using the [IN7 game app](/in7-game-app), start by opening the platform and following its registration or login process. Existing users can use the [IN7 game login](/in7-game-login) option to access their account. Take a minute to understand the app before jumping into a game. It is better to know where everything is than to click around in a hurry."
+      },
+      {
+        "h2": "Common Rummy Rules You Should Know Before Playing"
+      },
+      {
+        "p": "Once you understand the basic combinations, these rules become easier to remember."
+      },
+      {
+        "ul": [
+          "**You need valid combinations.** Random groups of cards do not count. Your cards need to be arranged into the required sequences and sets.",
+          "**You normally follow the draw and discard flow.** You pick a card and then discard one during your turn according to the format rules.",
+          "**A declaration must meet the required conditions.** Having several good-looking groups is not automatically enough.",
+          "**Different rummy formats can have different rules.** Points rummy, deals rummy, and other formats may have differences in gameplay, scoring, and declarations."
+        ]
+      },
+      {
+        "h2": "Using the App on Android"
+      },
+      {
+        "p": "Android users may be able to access the platform through its supported app option. If you are looking for the **IN7 APK download for Android**, use the platform's official source and follow its installation instructions. Avoid downloading APK files from random websites. You don't want to solve one problem and accidentally create another."
+      },
+      {
+        "h3": "Parting Words"
+      },
+      {
+        "p": "Rummy gets much easier once you understand sequences, sets, jokers, and the draw-discard flow. If you’re checking out the [IN7 game download](/in7-game-apk-download), learn the rules first and play within your limits."
+      },
+      {
+        "p": "Pehle game samjho, phir khelo."
+      }
     ],
-    relatedHref: '/in7-game-tips',
-    relatedLabel: 'More IN7 game tips →',
-  },
-  {
-    slug: 'in7-withdrawal-fast-guide',
-    title: 'IN7 Withdrawal Fast Kaise Karein — UPI Payout Guide',
-    category: 'Payments',
-    date: '2026-07-18',
-    excerpt: 'IN7 wallet se UPI mein paise nikalne ka poora process, minimum withdrawal, KYC, aur delay hone par kya karein.',
-    keywords: ['in7 game withdrawal', 'in7 apk download', 'in 7 game download'],
-    body: [
-      'IN7 ka withdrawal flow simple rakha gaya hai, wallet → withdraw → UPI ID, bas. Verified accounts ke liye zyadatar payouts 5 minute ke andar UPI app mein dikh jaate hain.',
-      'Minimum withdrawal ₹100 se start hota hai. Pehli baar withdraw karne se pehle basic KYC complete karna zaroori hai, PAN aur ek address proof, ye one-time process hai.',
-      'Agar withdrawal expected time se zyada le raha hai, pehle apna UPI ID double-check karein, ek typo sabse common wajah hai delay ki. Uske baad bhi issue ho to app ke andar support chat se directly contact karein.',
-      'Full withdrawal terms, processing windows aur troubleshooting steps /in7-game-withdrawal page par detail mein diye gaye hain.',
-    ],
-    relatedHref: '/in7-game-withdrawal',
-    relatedLabel: 'Full withdrawal guide →',
-  },
-  {
-    slug: 'andar-bahar-vs-dragon-tiger',
-    title: 'Andar Bahar vs Dragon Tiger — Kaunsa Game Aapke Liye Better Hai?',
-    category: 'Games',
-    date: '2026-07-24',
-    excerpt: 'Dono hi fast-paced card games hain, lekin rules aur risk profile alag hai. IN7 par kaunsa table pehle try karein, yahan compare kiya hai.',
-    keywords: ['in7 andar bahar', 'in7 dragon vs tiger', 'in7 game online'],
-    body: [
-      'Andar Bahar aur Dragon vs Tiger, dono IN7 ki sabse popular fast-round tables hain, lekin dono ka feel bilkul different hai.',
-      'Andar Bahar ek single card ke around banta hai, aapko sirf “Andar” ya “Bahar” side choose karni hoti hai jahan matching card pehle aayega. Rounds chhote hote hain, isliye beginners ke liye samajhna aasan hai.',
-      'Dragon vs Tiger mein do cards compare hoti hain, jo bhi zyada value ka card hai wahi side jeetti hai. Ismein thoda zyada probability-based decision making hota hai, isliye thoda experienced players isse zyada prefer karte hain.',
-      'Agar naye ho IN7 par, Andar Bahar se shuru karein, phir Dragon vs Tiger try karein jab table-reading confidence aa jaaye. Dono games /in7-gaming hub page par ek saath explore kar sakte hain.',
-    ],
-    relatedHref: '/in7-gaming',
-    relatedLabel: 'Explore all IN7 games →',
-  },
-  {
-    slug: 'in7-refer-and-earn-income',
-    title: 'IN7 Refer & Earn Se Extra Income Kaise Banayein',
-    category: 'Rewards',
-    date: '2026-07-30',
-    excerpt: 'IN7 ka refer program dono taraf ₹100 deta hai. Zyada friends refer karne ki practical tarike yahan.',
-    keywords: ['in7 game refer and earn', 'paise kamane wala game', 'in7 gaming co'],
-    body: [
-      'IN7 ka refer & earn simple hai, jab bhi koi aapke referral link se sign up karke pehla deposit karta hai, aap dono ko ₹100 credit milta hai.',
-      'Apna referral code app ke “Refer & Earn” section mein milega. WhatsApp groups, family circles, ya local gaming communities mein share karna sabse effective tarika hai.',
-      'Ek acha tip: sirf link mat bhejo, apna khud ka experience bhi share karo, kitni fast withdrawal aayi, kaunsa game sabse zyada pasand aaya. Genuine recommendation zyada convert hoti hai.',
-      'Poora terms, tracking aur payout schedule /in7-game-refer-and-earn page par hai. Ye /paise-kamane-wala-game ke through extra income dhoondne walon ke liye ek accha starting point ban sakta hai.',
-    ],
-    relatedHref: '/in7-game-refer-and-earn',
-    relatedLabel: 'IN7 refer & earn details →',
-  },
-  {
-    slug: 'responsible-gaming-in7',
-    title: 'Responsible Gaming — IN7 Par Safe Aur Smart Kaise Khelein',
-    category: 'Safety',
-    date: '2026-08-04',
-    excerpt: 'Real-money gaming enjoy karne ke saath saath apna budget aur time control mein rakhna bhi zaroori hai. Kuch practical rules.',
-    keywords: ['in7 real or fake', 'in7 game review', 'in7 gaming'],
-    body: [
-      'IN7 sirf 18+ users ke liye hai aur sirf un Indian states mein available hai jahan skill-based real-money gaming legal hai. Sign-up ke waqt location verification isi wajah se hoti hai.',
-      'Ek weekly ya monthly budget fix karein jo aap khelne ke liye afford kar sakte hain, aur usse strictly follow karein. Haarne par recover karne ke liye zyada deposit karna sabse common mistake hai, isse bachein.',
-      'Break lena normal hai. Agar khelna kaam ya relationships ko affect karne lage, ye ek signal hai ki pause lena zaroori hai. App ke andar self-exclusion aur deposit-limit tools available hain.',
-      'IN7 ke legitimacy, licensing aur user experience ka honest breakdown /in7-game-review page par hai, agar aap platform ko better samajhna chahte hain sign-up se pehle.',
-    ],
-    relatedHref: '/in7-game-review',
-    relatedLabel: 'Read the honest IN7 review →',
-  },
-
-  // ── Partner spotlight posts — one dedicated article per partner domain, each on its own topic ──
-  {
-    slug: 'online-casino-india-live-tables-guide',
-    title: 'Online Casino India 2026 — Live Tables Kaise Choose Karein',
-    category: 'Casino',
-    date: '2026-08-05',
-    excerpt: 'Live dealer tables, RTP, aur table limits — India me online casino choose karne se pehle ye 5 cheezein zaroor check karein.',
-    keywords: ['online casino india', 'live casino tables', '555 casino', 'casino games real money'],
-    body: [
-      'Online casino ka scene India me pichle do saal me kaafi badal gaya hai. Ab live dealer tables, real-time streaming aur UPI deposits standard ho gaye hain. Lekin platform choose karte waqt kuch basics check karna zaroori hai.',
-      'Sabse pehle table limits dekhein — ek achha casino ₹10 ki minimum bet se lekar high-roller tables tak sab offer karta hai. [555 Casino](https://555casino.in/) jaise platforms par live Andar Bahar, Roulette aur Teen Patti tables alag-alag stake levels par milti hain, isliye beginners aur experienced dono ke liye jagah hai.',
-      'Dusri cheez hai game variety aur dealer quality. Live tables par Hindi-speaking dealers ka hona experience ko kaafi smooth banata hai. Withdrawal speed bhi compare karein — 24 hours se zyada lagne wale platforms se door rahein.',
-      'Agar aap casino-style games explore karna chahte hain, [555casino.in](https://555casino.in/) ki live tables ek achha starting point hain. Aur agar card games me skill develop karni hai, hamari /in7-game-tips guide se shuru karein.',
-    ],
-    relatedHref: '/in7-game-tips',
-    relatedLabel: 'IN7 game tips guide →',
-    externalHref: 'https://555casino.in/',
-    externalLabel: 'Visit 555 Casino',
-  },
-  {
-    slug: 'top-real-money-game-apps-2026',
-    title: 'Top Real-Money Game Apps 2026 — Kaunsi Apps Actually Pay Karti Hain',
-    category: 'Roundups',
-    date: '2026-08-05',
-    excerpt: '2026 me real paisa dene wali gaming apps ki bharmaar hai, lekin sab genuine nahi. Ek curated list kaise kaam aati hai, yahan samjha hai.',
-    keywords: ['real money game apps', 'paise wala game app', 'best gaming apps india', '112 game apps'],
-    body: [
-      'Play Store aur baahar, dono jagah "paise kamane wala game" ka claim karne wali hazaaron apps hain. Problem ye hai ki inme se kaafi apps withdrawal ke time gayab ho jaati hain ya minimum payout itna high rakhti hain ki kabhi reach hi na ho.',
-      'Isliye curated app directories ka role important ho gaya hai. [112 Game Apps](https://112gameapps.com/) jaisi sites har app ko list karne se pehle uska payout proof, minimum withdrawal aur developer history check karti hain — jo individual players ke liye time-consuming kaam hai.',
-      'App choose karte waqt teen cheezein dekhein: (1) withdrawal minimum ₹100–200 se zyada na ho, (2) UPI direct payout ho, wallet-only na ho, (3) app ki community reviews recent hon, 6 mahine purani na hon.',
-      'Latest verified list ke liye [112gameapps.com](https://112gameapps.com/) check kar sakte hain. IN7 bhi isi standard par khara utarta hai — hamara poora review /in7-game-review par padhein.',
-    ],
-    relatedHref: '/in7-game-review',
-    relatedLabel: 'IN7 honest review →',
-    externalHref: 'https://112gameapps.com/',
-    externalLabel: 'Browse 112 Game Apps',
-  },
-  {
-    slug: 'fastest-upi-withdrawal-gaming-apps',
-    title: 'Fastest UPI Withdrawal Wale Gaming Apps — 5 Minute Payout Ka Sach',
-    category: 'Payments',
-    date: '2026-08-05',
-    excerpt: '"Instant withdrawal" har app claim karti hai, lekin actually kitni fast payout hoti hai? UPI payout speed ka real breakdown.',
-    keywords: ['instant withdrawal game', 'upi withdrawal gaming app', 'x89 app', 'fast payout games'],
-    body: [
-      'Gaming apps me sabse bada trust factor hai withdrawal speed. Jeete hue paise agar 3 din tak "processing" me atke rahein, to sabse achha game bhi bekaar lagta hai.',
-      'Technically, UPI payout 30 second me possible hai. Jo apps 24–48 hours leti hain, wahan delay unki internal approval queue ki wajah se hota hai, UPI ki nahi. [X89 App](https://x89app.in/) jaise newer platforms ne isi ko solve kiya hai — automated KYC ke baad payouts direct UPI rails par turant process hoti hain.',
-      'Fast payout wali app pehchanne ka tarika: pehla withdrawal chhota karein (₹100–200) aur time note karein. Verified account par agar 10 minute se zyada lage, to wo app "instant" claim ke layak nahi.',
-      'Fast UPI payout experience ke liye [x89app.in](https://x89app.in/) try kar sakte hain. IN7 ka withdrawal process kitna fast hai, ye humne /in7-game-withdrawal par detail me cover kiya hai.',
-    ],
-    relatedHref: '/in7-game-withdrawal',
-    relatedLabel: 'IN7 withdrawal guide →',
-    externalHref: 'https://x89app.in/',
-    externalLabel: 'Check out X89 App',
-  },
-  {
-    slug: 'teen-patti-vs-rummy-skill-comparison',
-    title: 'Teen Patti vs Rummy — Kaunsa Skill Game Aapke Liye Sahi Hai',
-    category: 'Games',
-    date: '2026-08-06',
-    excerpt: 'Dono India ke sabse bade card games hain, lekin skill curve bilkul alag. Personality ke hisaab se kaunsa choose karein, yahan compare kiya hai.',
-    keywords: ['teen patti vs rummy', 'skill based card games', 's1 games', 'rummy real money'],
-    body: [
-      'Teen Patti aur Rummy dono real-money card games hain, lekin dono ka DNA alag hai. Teen Patti short-burst psychology ka game hai — bluff, table reading, quick decisions. Rummy long-form calculation ka — sequences, probability, patience.',
-      'Agar aapko fast rounds pasand hain aur pressure me decisions lena aata hai, Teen Patti aapka game hai. Agar aap methodical player hain jo har card track kar sakta hai, Rummy me aapka edge zyada hoga. [S1 Games](https://s1games.in/) par dono formats available hain, isliye ek hi wallet se dono try karke apna fit dhoondh sakte hain.',
-      'Ek practical tip: naye players pehle Rummy ke practice tables par card discipline seekhein, phir Teen Patti me aayein. Ulta karne par Teen Patti ki aggression Rummy me loss karati hai.',
-      'Dono games ka collection [s1games.in](https://s1games.in/) par explore karein, aur Teen Patti ki winning strategy hamare /in7-game-tips page par detail me hai.',
-    ],
-    relatedHref: '/in7-game-tips',
-    relatedLabel: 'Teen Patti tips →',
-    externalHref: 'https://s1games.in/',
-    externalLabel: 'Play on S1 Games',
-  },
-  {
-    slug: 'in7-official-portals-mirror-links',
-    title: 'IN7 Official Portals Guide — Sahi Download Link Kaise Pehchane',
-    category: 'Getting started',
-    date: '2026-08-06',
-    excerpt: 'IN7 ke naam par fake sites bhi ghoomti hain. Official portals aur genuine mirror links pehchanne ka tarika yahan hai.',
-    keywords: ['in7 official website', 'in7 co', 'in7 game original app', 'in7 mirror link'],
-    body: [
-      'Jab koi gaming app popular hoti hai, uske naam par clone sites bhi aa jaati hain. IN7 ke saath bhi yahi hua — isliye ye jaanna zaroori hai ki official portals kaunse hain.',
-      'IN7 ka primary web portal ye site hai, aur [IN7 Co](https://in7co.in/) official companion portal hai jahan se bhi genuine APK milti hai. In dono ke alawa kisi bhi site se mili APK ko install karne se pehle double-check karein.',
-      'Genuine portal pehchanne ke signs: HTTPS ho, APK ka size official specs se match kare (~48 MB), aur site par contact/support details available hon. Fake sites usually modded APK deti hain jisme malware ho sakta hai.',
-      'Backup download source ke liye [in7co.in](https://in7co.in/) bookmark kar lein. Step-by-step safe install process hamare /in7-game-apk-download page par hai.',
-    ],
-    relatedHref: '/in7-game-apk-download',
-    relatedLabel: 'IN7 APK download guide →',
-    externalHref: 'https://in7co.in/',
-    externalLabel: 'Visit IN7 Co portal',
-  },
-  {
-    slug: 'slots-games-beginners-guide-india',
-    title: 'Slots Games Beginners Guide — RTP, Paylines Aur Bankroll Basics',
-    category: 'Games',
-    date: '2026-08-06',
-    excerpt: 'Slots sirf luck nahi hai — RTP, volatility aur bet sizing samajhne se experience aur results dono better hote hain.',
-    keywords: ['online slots india', 'slots real money', 'ie777 slots', 'slot games guide'],
-    body: [
-      'Slots duniya ke sabse popular casino games hain, aur ab India me bhi inka craze badh raha hai. Lekin zyadatar naye players bina basics samjhe spin karna shuru kar dete hain.',
-      'Sabse important concept hai RTP (Return to Player) — 96% RTP ka matlab long run me har ₹100 par average ₹96 wapas. [IE777s](https://ie777s.com/) jaise slot-focused platforms har game ka RTP dikhate hain, jo transparent platforms ki nishani hai.',
-      'Dusra concept: volatility. High-volatility slots bade lekin rare wins dete hain, low-volatility chhote lekin frequent. Apne bankroll ke hisaab se choose karein — chhota budget hai to low-volatility se shuru karein.',
-      'Slot collection explore karne ke liye [ie777s.com](https://ie777s.com/) dekh sakte hain. Aur bankroll discipline ke rules hamare /in7-game-tips page par bhi apply hote hain.',
-    ],
-    relatedHref: '/in7-game-tips',
-    relatedLabel: 'Bankroll tips →',
-    externalHref: 'https://ie777s.com/',
-    externalLabel: 'Explore IE777s slots',
-  },
-  {
-    slug: 'game-apk-download-safety-checklist',
-    title: 'Game APK Download Safety Checklist — Install Se Pehle Ye 6 Cheezein Check Karein',
-    category: 'Safety',
-    date: '2026-08-07',
-    excerpt: 'APK sideloading risky nahi hai agar sahi source se ho. Ye 6-point checklist har download se pehle follow karein.',
-    keywords: ['apk download safe', 'game apk install', 'xx7 game', 'android apk safety'],
-    body: [
-      'Real-money gaming apps zyadatar APK ke through distribute hoti hain kyunki Play Store ki policies inhe allow nahi kartin. Sideloading khud me risky nahi hai — risky hai galat source se download karna.',
-      'Checklist: (1) HTTPS site se hi download karein, (2) file size official specs se match kare, (3) install se pehle Play Protect scan on rakhein, (4) app sirf zaroori permissions maange, (5) source site par support contact ho, (6) community reviews recent hon. [XX7 Game](https://xx7game.com/) jaise portals har listed APK ke saath ye details publish karte hain.',
-      'Red flags: APK jo SMS ya contacts ki permission maange, ya install ke baad turant "update" download kare kisi unknown source se. Aisi app turant uninstall karein.',
-      'Verified game APKs aur unke safety details ke liye [xx7game.com](https://xx7game.com/) ek useful resource hai. IN7 ki safe install process /in7-game-apk-download par step-by-step di gayi hai.',
-    ],
-    relatedHref: '/in7-game-apk-download',
-    relatedLabel: 'Safe APK install guide →',
-    externalHref: 'https://xx7game.com/',
-    externalLabel: 'Visit XX7 Game',
-  },
-  {
-    slug: 'ghar-baithe-paise-kamane-wale-games',
-    title: 'Ghar Baithe Paise Kamane Wale Games — Realistic Expectations Ke Saath',
-    category: 'Earning',
-    date: '2026-08-07',
-    excerpt: 'Gaming se side income possible hai, lekin "roz ₹5000" wale claims fake hain. Realistic earning approach kya hai, yahan hai.',
-    keywords: ['paise kamane wala game', 'ghar baithe paise kaise kamaye', '360 inr', 'earning games india'],
-    body: [
-      'YouTube ads me "roz ₹5000 kamao" wale claims dekhkar gaming me aana sabse bada galat start hai. Sach ye hai: skill-based gaming se side income possible hai, lekin wo skill, discipline aur time ke saath aati hai.',
-      'Realistic approach: pehle mahine ko learning period maanein — chhoti stakes, focus game samajhne par. [360 INR](https://360-inr.com/) jaise earning-focused platforms par multiple game formats aur referral programs ek saath milte hain, jisse income streams diversify hoti hain.',
-      'Referral income ko underestimate na karein — consistent players ke liye ye gameplay se zyada stable income source ban sakta hai. Lekin spam se nahi, genuine recommendations se.',
-      'Earning options explore karne ke liye [360-inr.com](https://360-inr.com/) dekhein, aur hamara /paise-kamane-wala-game page realistic earning games ka full breakdown deta hai.',
-    ],
-    relatedHref: '/paise-kamane-wala-game',
-    relatedLabel: 'Paise kamane wale games →',
-    externalHref: 'https://360-inr.com/',
-    externalLabel: 'Explore 360 INR',
-  },
-  {
-    slug: 'welcome-bonus-maximize-guide',
-    title: 'Gaming App Welcome Bonus Maximize Kaise Karein — Playthrough Ka Math',
-    category: 'Rewards',
-    date: '2026-08-07',
-    excerpt: '₹500 bonus ka matlab ₹500 cash nahi hota. Playthrough requirements samajh kar bonus ka asli value nikaalna seekhein.',
-    keywords: ['gaming app bonus', 'welcome bonus games', 'mast79 game', 'bonus playthrough'],
-    body: [
-      'Har gaming app welcome bonus deti hai, lekin bonus ka number dekh kar app choose karna galti hai. Asli sawal hai: playthrough requirement kya hai?',
-      'Playthrough matlab bonus ko withdraw-able banane ke liye kitna khelna padega. ₹500 bonus with 30x playthrough ka matlab ₹15,000 ka gameplay — practically unreachable. ₹300 bonus with 5x playthrough zyada valuable hai. [Mast79 Game](https://mast79game.com/) jaise platforms low-playthrough bonuses ke liye jaane jaate hain, jo actually cash me convert hote hain.',
-      'Bonus compare karte waqt formula: bonus amount ÷ playthrough multiplier = realistic value. Is math se 90% "bade" bonuses chhote nikalte hain.',
-      'Achhe bonus structures ke liye [mast79game.com](https://mast79game.com/) check karein. IN7 ke ₹777 bonus ka poora math hamare /in7-game-bonus page par transparent likha hai.',
-    ],
-    relatedHref: '/in7-game-bonus',
-    relatedLabel: 'IN7 bonus details →',
-    externalHref: 'https://mast79game.com/',
-    externalLabel: 'See Mast79 bonuses',
-  },
-  {
-    slug: 'naye-gaming-platforms-2026',
-    title: '2026 Ke Naye Gaming Platforms — Kya Naya Aa Raha Hai India Me',
-    category: 'Trends',
-    date: '2026-08-08',
-    excerpt: 'Is saal launch hue gaming platforms me kya trends dikh rahe hain — instant KYC, micro-stakes tables, aur regional language support.',
-    keywords: ['new gaming apps 2026', 'latest game platforms india', 'mast179 games', 'new teen patti apps'],
-    body: [
-      '2026 me launch hone wale gaming platforms purani generation se kaafi alag hain. Teen trends clearly dikh rahe hain: instant Aadhaar-based KYC, ₹5 ki micro-stakes tables, aur Hindi/Tamil/Telugu interface support.',
-      'Naye platforms ka fayda ye hai ki wo user acquisition ke liye aggressive bonuses aur low rake dete hain. [Mast179 Games](https://mast179games.com/) is new wave ka achha example hai — fresh platform, modern UI, aur launch offers jo established apps se zyada generous hain.',
-      'Lekin naye platform par pehla deposit chhota rakhein aur withdrawal pehle test karein. Naya hona fayda bhi hai, risk bhi.',
-      'New-generation platforms explore karne ke liye [mast179games.com](https://mast179games.com/) dekh sakte hain. Aur pehli baar kisi bhi platform par khelne ke basics hamare /how-to-play-in7 page par hain.',
-    ],
-    relatedHref: '/how-to-play-in7',
-    relatedLabel: 'How to play guide →',
-    externalHref: 'https://mast179games.com/',
-    externalLabel: 'Visit Mast179 Games',
-  },
-  {
-    slug: 'card-game-strategy-beginner-to-pro',
-    title: 'Card Game Strategy — Beginner Se Pro Tak Ka 30-Din Roadmap',
-    category: 'Strategy',
-    date: '2026-08-08',
-    excerpt: 'Koi bhi card game ho, pro banne ka path same hai: fundamentals, pattern recognition, phir controlled aggression. 30-din ka plan yahan.',
-    keywords: ['card game strategy', 'teen patti strategy', 'fn7 game', 'poker strategy hindi'],
-    body: [
-      'Card games me luck short-term hai, skill long-term. Jo players 30 din structured practice karte hain, wo random khelne walon se measurably aage nikal jaate hain.',
-      'Week 1: sirf rules aur hand rankings master karein, free tables par. Week 2: opponents ke betting patterns note karna shuru karein. Week 3: apni khud ki predictability todein — [FN7 Game](https://fn7gameng.com/) jaise platforms ke multi-format tables is stage par useful hain kyunki alag formats me pattern-reading practice hoti hai.',
-      'Week 4: bankroll rules lock karein — ek session me bankroll ka 5% se zyada kabhi risk na karein. Ye rule pros ko amateurs se alag karta hai.',
-      'Multi-format practice ke liye [fn7gameng.com](https://fn7gameng.com/) try karein, aur IN7-specific winning tactics /in7-game-tips par hain.',
-    ],
-    relatedHref: '/in7-game-tips',
-    relatedLabel: 'IN7 winning tactics →',
-    externalHref: 'https://fn7gameng.com/',
-    externalLabel: 'Practice on FN7',
-  },
-  {
-    slug: 'android-phone-gaming-setup-tips',
-    title: 'Android Phone Ko Real-Money Gaming Ke Liye Ready Kaise Karein',
-    category: 'Guides',
-    date: '2026-08-08',
-    excerpt: 'Lag-free gaming, secure payments aur battery optimization — apne Android phone ka gaming setup 10 minute me perfect karein.',
-    keywords: ['android gaming setup', 'phone gaming tips', 'ind9 game', 'gaming apps android'],
-    body: [
-      'Real-money games me ek lag ya disconnect ka matlab directly paisa loss ho sakta hai. Isliye phone ka setup utna hi important hai jitna game ki strategy.',
-      'Basics: game session se pehle background apps clear karein, battery saver off rakhein (ye network throttle karta hai), aur stable connection use karein — 4G/5G zyadatar public Wi-Fi se better hai. [IND9 Game](https://ind9game.com/) jaise platforms ki apps lightweight hoti hain, lekin phir bhi 2GB+ free RAM rakhna smooth experience deta hai.',
-      'Security side: gaming apps ke liye alag UPI ID banayein, app lock enable karein, aur phone ka OS updated rakhein. Rooted phones par real-money apps avoid karein — kaafi platforms rooted devices block karte hain.',
-      'Android-optimized gaming ke liye [ind9game.com](https://ind9game.com/) dekh sakte hain. IN7 app ke device requirements /in7-game-app page par listed hain.',
-    ],
-    relatedHref: '/in7-game-app',
-    relatedLabel: 'IN7 app requirements →',
-    externalHref: 'https://ind9game.com/',
-    externalLabel: 'Get IND9 Game',
-  },
-  {
-    slug: 'apk-stores-vs-play-store-gaming',
-    title: 'APK Stores vs Play Store — Gaming Apps Kahan Se Download Karein',
-    category: 'Guides',
-    date: '2026-08-09',
-    excerpt: 'Real-money games Play Store par kyun nahi milte, aur trusted APK stores kaise kaam karte hain — poora picture yahan.',
-    keywords: ['apk store india', 'play store gaming apps', 'iw7 apps', 'apk download site'],
-    body: [
-      'Kabhi socha hai ki Teen Patti ya Rummy ki real-money apps Play Store par kyun nahi milti? Google ki gambling policy inhe list nahi hone deti (kuch DFS/rummy exceptions ke alawa). Isliye ye apps APK stores aur direct downloads se distribute hoti hain.',
-      'Achha APK store wahi hai jo Play Store jaisa hi kaam kare: apps verify karke list kare, versions update rakhe, aur malware scan kare. [IW7 Apps](https://iw7apps.com/) isi model par kaam karta hai — har gaming APK manually verify hoke hi list hoti hai.',
-      'Direct APK ka ek fayda bhi hai: updates Play Store review me atakti nahi, isliye bug fixes turant milte hain. Bas source trusted hona chahiye.',
-      'Trusted gaming APKs ke liye [iw7apps.com](https://iw7apps.com/) browse karein. IN7 ki APK seedha /in7-game-apk-download se bhi mil jaati hai.',
-    ],
-    relatedHref: '/in7-game-apk-download',
-    relatedLabel: 'Download IN7 APK →',
-    externalHref: 'https://iw7apps.com/',
-    externalLabel: 'Browse IW7 Apps',
-  },
-  {
-    slug: 'verified-game-apk-kaise-pehchane',
-    title: 'Verified Game APK Kaise Pehchane — Fake Aur Modded Files Se Bachein',
-    category: 'Safety',
-    date: '2026-08-09',
-    excerpt: 'Modded APK me malware aur account-ban dono ka risk hai. Original file verify karne ke 4 practical tarike.',
-    keywords: ['verified apk', 'original game apk', 'is7 game apks', 'fake apk check'],
-    body: [
-      'Telegram groups aur random sites par milne wali "unlimited chips" wali modded APKs sabse bada trap hain. Inme keyloggers ho sakte hain, aur pakde jaane par account permanently ban hota hai — balance ke saath.',
-      'Original APK verify karne ke tarike: (1) file size official se match karein, (2) APK ka package name official app se compare karein, (3) install se pehle VirusTotal jaise scanner par upload karein, (4) sirf verified libraries se download karein. [IS7 Game APKs](https://is7gameapks.com/) har file ke saath checksum aur version history publish karta hai — yehi transparency verified source ki pehchaan hai.',
-      'Rule of thumb: agar koi APK aisi feature promise kare jo official app me nahi hai (free chips, hidden cards), wo 100% scam hai.',
-      'Verified game files ke liye [is7gameapks.com](https://is7gameapks.com/) ek reliable library hai. IN7 ki original APK ke specs /in7-game-apk-download par diye hain.',
-    ],
-    relatedHref: '/in7-game-apk-download',
-    relatedLabel: 'Original IN7 APK specs →',
-    externalHref: 'https://is7gameapks.com/',
-    externalLabel: 'Visit IS7 APK library',
-  },
-  {
-    slug: 'india-first-gaming-apps-rise',
-    title: 'India-First Gaming Apps Ka Rise — Desi Games, Desi Payments',
-    category: 'Trends',
-    date: '2026-08-09',
-    excerpt: 'Global casino clones ki jagah ab India-first apps le rahi hain — UPI-native, Hindi UI, aur desi games. Ye shift kyun ho raha hai.',
-    keywords: ['indian gaming apps', 'desi game apps', 'mg7 app', 'made in india games'],
-    body: [
-      'Pichle kuch saalon me gaming apps ka focus badla hai. Pehle international casino platforms ke clones aate the — dollar-based, card payments, English-only. Ab India-first apps ka daur hai.',
-      'India-first ka matlab: UPI native integration (card/netbanking ka jhanjhat nahi), Hindi aur regional language UI, aur games jo yahan ke players actually khelte hain — Teen Patti, Andar Bahar, Ludo. [MG7 App](https://mg7app.co.in/) is philosophy ka achha example hai, .co.in domain se lekar payment flow tak sab India ke liye bana hai.',
-      'Is shift ka sabse bada fayda withdrawal experience me dikhta hai — India-first apps me UPI payout minutes me aata hai, jabki international platforms hafte lagate hain.',
-      'Desi gaming experience ke liye [mg7app.co.in](https://mg7app.co.in/) try karein. IN7 bhi isi India-first approach par bana hai — poori kahani /about page par hai.',
-    ],
-    relatedHref: '/about',
-    relatedLabel: 'About IN7 →',
-    externalHref: 'https://mg7app.co.in/',
-    externalLabel: 'Visit MG7 App',
-  },
-  {
-    slug: 'lightweight-game-apps-kam-storage',
-    title: 'Kam Storage Wale Phone Ke Liye Lightweight Game Apps',
-    category: 'Guides',
-    date: '2026-08-09',
-    excerpt: '64GB phone me space ki tangi? 50MB se chhoti real-money gaming apps bhi full experience deti hain. Kaise dhoondein, yahan hai.',
-    keywords: ['lightweight game apps', 'small size games', 'mmy download', 'low storage gaming'],
-    body: [
-      'India me majority phones 64–128GB storage ke hain, aur photos-videos ke baad games ke liye jagah kam bachti hai. Achhi baat ye hai ki real-money card games ko heavy graphics ki zaroorat nahi hoti.',
-      'Achhi lightweight gaming app 30–60MB me full experience deti hai — live tables, chat, payments sab. [MMY Download](https://mmydownload.com/) jaisi download hubs par apps size ke saath listed hoti hain, isliye download se pehle hi pata chal jaata hai ki kitni jagah lagegi.',
-      'Ek aur tip: gaming apps ka cache har hafte clear karein — ye 200–500MB tak bhar jaata hai. Settings → Apps → app → Clear Cache. Game data safe rehta hai kyunki wo server par hota hai.',
-      'Size-conscious downloads ke liye [mmydownload.com](https://mmydownload.com/) useful hai. IN7 ki APK bhi sirf ~48MB ki hai — details /in7-game-apk-download par.',
-    ],
-    relatedHref: '/in7-game-apk-download',
-    relatedLabel: 'IN7 APK (48MB) →',
-    externalHref: 'https://mmydownload.com/',
-    externalLabel: 'Browse MMY Download',
-  },
-  {
-    slug: 'bankroll-management-jeet-ka-formula',
-    title: 'Bankroll Management — Consistent Jeet Ka Asli Formula',
-    category: 'Strategy',
-    date: '2026-08-09',
-    excerpt: 'Winning players aur losing players me sabse bada difference strategy nahi, bankroll discipline hai. 5 rules jo follow karne hain.',
-    keywords: ['bankroll management', 'gaming money management', 'ind9 win', 'winning strategy games'],
-    body: [
-      'Ek uncomfortable sach: zyadatar players games ke rules to seekh lete hain, lekin paisa manage karna kabhi nahi seekhte. Aur yahi unhe long-term loser banata hai, skill ki kami nahi.',
-      'The 5 rules: (1) gaming bankroll rozmarra ke paise se alag rakhein, (2) ek session me bankroll ka max 10%, (3) ek hand/round me max 5%, (4) jeetne ke baad profits ka 50% turant withdraw karein, (5) losing streak me stakes double kabhi na karein. [IND9 Win](https://ind9win.com/) jaise platforms me session limits set karne ke built-in tools milte hain jo in rules ko enforce karna easy banate hain.',
-      'Rule #4 sabse powerful hai — "paper profit" ko real profit banana hi actual jeet hai. Jo paisa wallet me wapas nahi aaya, wo jeeta hua nahi hai.',
-      'Disciplined play ke liye [ind9win.com](https://ind9win.com/) ke limit tools try karein, aur IN7 par withdrawal ka fastest tarika /in7-game-withdrawal par hai.',
-    ],
-    relatedHref: '/in7-game-withdrawal',
-    relatedLabel: 'Fast withdrawal guide →',
-    externalHref: 'https://ind9win.com/',
-    externalLabel: 'Play on IND9 Win',
-  },
+    "faqs": [
+      {
+        "q": "How many cards are there in a rummy deck?",
+        "a": "A standard rummy deck usually has 52 cards. In Indian 13-card rummy, players may use one or two decks depending on the number of players, along with Jokers."
+      },
+      {
+        "q": "How are points counted in Indian rummy?",
+        "a": "High cards like Ace, King, Queen, and Jack usually carry 10 points each. Number cards carry their face value, while Jokers usually have zero points."
+      },
+      {
+        "q": "How does an online rummy game start?",
+        "a": "Once players join the table, cards are dealt automatically. The game then starts with players taking turns to draw and discard cards."
+      }
+    ]
+  }
 ];
 
 export function getPostBySlug(slug: string) {

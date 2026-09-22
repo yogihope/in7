@@ -150,7 +150,7 @@ export default function In7AppPage() {
 
       <section className="wrap" style={{ paddingBottom: 8 }}>
         <p className="muted" style={{ fontSize: '0.92rem' }}>
-          App download nahi hua abhi tak? <Link href="/in7-game-apk-download" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>IN7 APK download page</Link> par jaayein, ya poora <Link href="/blog/in7-apk-download-guide" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>step-by-step guide</Link> padhein.
+          App download nahi hua abhi tak? <Link href="/in7-game-apk-download" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>IN7 APK download page</Link> par jaayein, ya poora <Link href="/in7-gaming" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>step-by-step guide</Link> padhein.
         </p>
       </section>
 

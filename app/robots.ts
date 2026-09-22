@@ -6,17 +6,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
+        disallow: ['/api/'],
       },
       {
         userAgent: 'Bingbot',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
+        disallow: ['/api/'],
       },
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/*?*'],
+        disallow: ['/api/', '/*?*'],
       },
     ],
     sitemap: 'https://www.in7gaming.co/sitemap.xml',

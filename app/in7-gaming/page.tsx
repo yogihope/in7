@@ -1,199 +1,257 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import FAQ from '@/components/FAQ';
-import { IN7_DOWNLOAD_URL } from '@/lib/constants';
 import { breadcrumbJsonLd, webPageJsonLd, jsonLdScript } from '@/lib/seo';
 
+const META_TITLE = 'IN7 Gaming - Explore the IN7 Game App & Gaming Experience';
+const META_DESCRIPTION =
+  'Explore IN7 Gaming and learn more about the IN7 Game app, its features, and the overall gaming experience. Find useful information to get started.';
+
 export const metadata: Metadata = {
-  title: 'IN7 Gaming Online · India’s Skill Real-Money Game',
-  description:
-    'IN7 Gaming is India’s skill-first real-money game platform. Play IN7 game online, download IN7 APK, claim ₹777 welcome bonus and withdraw to UPI in 5 minutes.',
+  title: { absolute: META_TITLE },
+  description: META_DESCRIPTION,
   alternates: { canonical: '/in7-gaming' },
-  keywords: [
-    'in7 gaming',
-    'in7',
-    'in7 game',
-    'in7 game online',
-    'in7 real money game',
-    'in7 skill game',
-    'in7 gaming india',
-    'in7 gaming app',
-    'in7 gaming co',
-    'in7 teen patti',
-    'in7 andar bahar',
-    'in7 dragon vs tiger',
-    'in7 rummy',
-    'in7 lucky 7',
-  ],
   openGraph: {
-    title: 'IN7 Gaming Online · India’s Skill Real-Money Game',
-    description:
-      'IN7 Gaming, India’s skill-first real-money platform. Download IN7 APK, claim ₹777 bonus and cashout to UPI fast.',
+    title: META_TITLE,
+    description: META_DESCRIPTION,
     url: '/in7-gaming',
-    images: [{ url: '/in7-game-banner.jpeg', width: 1200, height: 630, alt: 'IN7 Gaming · IN7 game online for India' }],
+    images: [{ url: '/in7-game-banner.jpeg', width: 1200, height: 630, alt: 'IN7 Gaming' }],
   },
 };
+
+const FAQS = [
+  {
+    q: 'Can I enjoy gaming without a PC or console?',
+    a: 'Yes, our app lets you enjoy mobile gaming on your Android phone without needing a PC or gaming console.',
+  },
+  {
+    q: 'Why choose your mobile gaming app for entertainment?',
+    a: 'You can enjoy fun games directly on your Android phone, whether you have a few minutes or more free time.',
+  },
+  {
+    q: 'Is this gaming app suitable for short gaming sessions?',
+    a: 'Yes, you can enjoy the available games during your free time. The length of each session depends on the game.',
+  },
+  {
+    q: 'Are the games easy to play?',
+    a: 'Our app aims to offer simple and enjoyable games. Controls and rules depend on the game.',
+  },
+  {
+    q: 'Can I play games whenever I want?',
+    a: 'Yes, you can enjoy available games whenever you have internet access and meet the game requirements.',
+  },
+];
+
+const P = { marginTop: 16, fontSize: '1rem', lineHeight: 1.7, maxWidth: 760 } as const;
+const H2 = { marginTop: 0 } as const;
+const H3 = { fontSize: '1.2rem', letterSpacing: '-0.02em' } as const;
+const UL = { marginTop: 16, paddingLeft: 22, lineHeight: 1.8, maxWidth: 760, listStyle: 'disc' } as const;
+
+function Cards({ items }: { items: { t: string; d: string }[] }) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16, marginTop: 28 }} className="doc-grid">
+      {items.map((it) => (
+        <div key={it.t} className="card">
+          <h3 className="serif" style={H3}>{it.t}</h3>
+          <p className="muted" style={{ marginTop: 8, fontSize: '0.95rem', lineHeight: 1.6 }}>{it.d}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function LabeledList({ items }: { items: [string, string][] }) {
+  return (
+    <ul style={UL}>
+      {items.map(([label, text]) => (
+        <li key={label} style={{ marginTop: 6 }}>
+          <strong>{label}:</strong> {text}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function In7GamingPage() {
   return (
     <>
-      {/* Hero */}
       <section className="section">
         <div className="wrap">
-          <span className="eyebrow">/ in7 gaming</span>
-          <h1 className="display balance" style={{ marginTop: 14, maxWidth: 920 }}>
-            IN7 Gaming. Built where the players actually <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>are</em>.
+          <h1 className="display balance" style={{ maxWidth: 920 }}>
+            Enjoy a Smooth Gaming Experience with Our IN7 Game App
           </h1>
-          <p className="muted balance" style={{ marginTop: 22, fontSize: '1.1rem', lineHeight: 1.65, maxWidth: 720 }}>
-            Most “gaming apps” copied a Western template and called it a day. IN7 Gaming was designed from scratch for the Indian phone, the Indian network, and the Indian player who wants their wins in UPI before the over ends.
+          <p className="muted" style={{ ...P, marginTop: 22 }}>
+            {"It's a Sunday afternoon; you finally have some free time. Grab your phone and think, \"Chalo, thoda game khelte hain.\" You open one gaming app, but the screen feels cluttered. You try another, and now you're searching everywhere just to find the game you want. Then comes the APK confusion, random download links, and that small doubt in your head: \"Kahin galat app toh nahi?\""}
           </p>
-          <div style={{ display: 'flex', gap: 12, marginTop: 28, flexWrap: 'wrap' }}>
-            <a href={IN7_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg pulse-cta">↓ Download IN7 APK</a>
-            <Link href="/in7-game-review" className="btn btn-ghost btn-lg">See full review</Link>
-          </div>
+          <p className="muted" style={P}>
+            {"IN7 Gaming is here to make all your free time worthwhile with our reliable game app. We started our journey in 2024 with one simple thought: gaming shouldn't be this frustrating. Three of us- two engineers and one designer- started IN7 as a side project to fix the things players were tired of dealing with."}
+          </p>
         </div>
       </section>
 
-      {/* Pillars */}
       <section className="section dot-paper">
         <div className="wrap">
-          <div className="two-col">
-            <div>
-              <span className="eyebrow">The four pillars</span>
-              <h2 className="h-section" style={{ marginTop: 14 }}>
-                What makes IN7 <span className="marker-line">work</span>.
-              </h2>
-              <p className="muted" style={{ marginTop: 18, fontSize: '1rem', lineHeight: 1.7, maxWidth: 360 }}>
-                We boil “great gaming” down to four things. If even one of these breaks, you stop playing. So we made them non-negotiable.
-              </p>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16 }}>
-              {[
-                { n: '01', t: 'Fair tables', d: 'Every IN7 game uses certified RNG seeds and a published table-fairness report. No silent house edge tweaks.' },
-                { n: '02', t: 'Fast money', d: 'Withdrawals are paid out in batches every 90 seconds. Verified players see UPI deposits in under 5 minutes.' },
-                { n: '03', t: 'Light app', d: 'IN7 game apk weighs under 50 MB. Cold-start under 6 seconds even on a Redmi 9.' },
-                { n: '04', t: 'Real support', d: 'Hindi-English chat support that actually replies, average first response under 4 minutes between 9am–11pm IST.' },
-              ].map((p, i) => (
-                <div key={i} className="card" style={{ display: 'grid', gridTemplateColumns: '64px 1fr', gap: 16, alignItems: 'start' }}>
-                  <div className="index-num" style={{ fontSize: '2.4rem' }}>{p.n}</div>
-                  <div>
-                    <h3 className="serif" style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}>{p.t}</h3>
-                    <p className="muted" style={{ marginTop: 6, fontSize: '0.95rem', lineHeight: 1.6 }}>{p.d}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Game library teaser */}
-      <section className="section">
-        <div className="wrap">
-          <div style={{ maxWidth: 720 }}>
-            <span className="eyebrow">The library</span>
-            <h2 className="h-section" style={{ marginTop: 14 }}>
-              Seven rooms. <em className="serif" style={{ fontStyle: 'italic', color: '#b91c2c' }}>Different</em> rhythms.
-            </h2>
-            <p className="muted" style={{ marginTop: 18, fontSize: '1rem', lineHeight: 1.7 }}>
-              IN7 Gaming offers India’s most-loved real-money formats — Teen Patti, Andar Bahar, Dragon vs Tiger, Rummy and Lucky 7 — alongside two unique skill innovations only on IN7.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16, marginTop: 36 }} className="rooms-grid">
+          <h2 className="h-section" style={H2}>{"First Things First: Here's Where You Actually Start"}</h2>
+          <p className="muted" style={P}>Stop scrolling. Pick what matches your situation right now:</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 16, marginTop: 28 }} className="doc-grid">
             {[
-              { tag: 'Card', title: 'Teen Patti', body: 'India’s favourite 3-card poker. Boot, blind or chaal — pack or show to win the pot.', stake: '₹10–₹2000' },
-              { tag: 'Card', title: 'Andar Bahar', body: 'The classic Andar Bahar everyone knows. Pick a side, watch the joker land, settle in 30 sec.', stake: '₹10–₹1000' },
-              { tag: 'Casino', title: 'Dragon vs Tiger', body: 'IN7’s fastest casino room. Two cards, higher wins. 15-second rounds non-stop.', stake: '₹10–₹2000' },
-              { tag: 'Classic', title: 'IN7 Rummy', body: 'A clean, ad-free 13-card Indian Rummy. Daily tournaments + practice tables.', stake: '₹25–₹5000' },
-              { tag: 'Dice', title: 'Lucky 7', body: 'IN7 signature dice room. Bet under, over, or exactly 7. Settles in 10 seconds.', stake: '₹10–₹500' },
-              { tag: 'Memory', title: 'Mind Match', body: 'IN7 exclusive memory game. 4×4 grid, four players, pure skill, zero RNG.', stake: '₹20–₹2000' },
-              { tag: 'Casual', title: 'Spin Sevens', body: 'Daily lucky-spin format. One free spin a day, optional cash spins after.', stake: 'Free–₹100' },
-            ].map((r, i) => (
-              <article key={i} className="card" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span className="tag">{r.tag}</span>
-                  <span className="muted" style={{ fontSize: '0.78rem', fontWeight: 600 }}>{r.stake}</span>
-                </div>
-                <h3 className="serif" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em', marginTop: 10 }}>{r.title}</h3>
-                <p className="muted" style={{ fontSize: '0.95rem', lineHeight: 1.6 }}>{r.body}</p>
-              </article>
+              ['Using an Android phone?', "Go for our IN7 APK download route. That's the official way to get our app on Android devices."],
+              ['Using an iPhone?', "You'll play through your mobile browser. There's no iOS app, but the web version works smoothly."],
+              ['Just want to play online?', 'Skip the download entirely and use the browser experience on any device.'],
+              ['Already have an account?', 'Head straight to the IN7 game login page and get back to playing.'],
+            ].map(([q, a]) => (
+              <div key={q} className="card">
+                <p style={{ lineHeight: 1.6 }}>
+                  <strong>{q}</strong> <span className="muted">{a}</span>
+                </p>
+              </div>
             ))}
           </div>
-
-          <style>{`
-            @media (min-width: 720px) {
-              .rooms-grid { grid-template-columns: repeat(2, 1fr) !important; }
-            }
-            @media (min-width: 1080px) {
-              .rooms-grid { grid-template-columns: repeat(3, 1fr) !important; }
-            }
-          `}</style>
         </div>
       </section>
 
-      {/* The community section */}
-      <section className="section ink-section">
+      <section className="section">
         <div className="wrap">
-          <div className="two-col">
-            <div>
-              <span className="eyebrow">By the numbers</span>
-              <h2 className="h-section" style={{ marginTop: 14, color: '#fff8f3' }}>
-                IN7 in 2025, briefly.
-              </h2>
-              <p className="muted-light" style={{ marginTop: 18, lineHeight: 1.65, maxWidth: 380 }}>
-                We don’t love vanity metrics, but a few numbers tell the story better than copy. Audited September 2025.
-              </p>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 36 }}>
-              <div>
-                <div className="stat-num" style={{ color: '#fff8f3' }}>50<em>L+</em></div>
-                <div className="stat-label" style={{ color: 'rgba(255,248,243,0.55)' }}>Total players</div>
-              </div>
-              <div>
-                <div className="stat-num" style={{ color: '#fff8f3' }}>92<em>%</em></div>
-                <div className="stat-label" style={{ color: 'rgba(255,248,243,0.55)' }}>D7 retention</div>
-              </div>
-              <div>
-                <div className="stat-num" style={{ color: '#fff8f3' }}>4<em>min</em></div>
-                <div className="stat-label" style={{ color: 'rgba(255,248,243,0.55)' }}>Avg cashout</div>
-              </div>
-              <div>
-                <div className="stat-num" style={{ color: '#fff8f3' }}>₹40<em>cr</em></div>
-                <div className="stat-label" style={{ color: 'rgba(255,248,243,0.55)' }}>Paid out (2025)</div>
-              </div>
-            </div>
+          <h2 className="h-section" style={H2}>The Download Part Nobody Should Have to Overthink</h2>
+          <p className="muted" style={P}>
+            {"Let's talk about the actual download journey. Not some robotic \"step one, step two\" list. We offer a straightforward guide when you're trying to get the IN7 APK download for Android."}
+          </p>
+          <ul style={UL}>
+            <li>You need the official APK file from a trusted source</li>
+            <li>Your phone might ask for permission to install from outside the Play Store</li>
+            <li>The file size is around 48 MB based on recent versions</li>
+            <li>You need Android 7.0 or higher</li>
+            <li>Make sure you have enough storage space before starting</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="section dot-paper">
+        <div className="wrap">
+          <h2 className="h-section" style={H2}>Few Things to Keep in Mind Before Downloading IN7</h2>
+          <p className="muted" style={P}>To avoid any hassle, keep the below points in mind:</p>
+          <Cards
+            items={[
+              { t: 'Downloading the Android Version', d: "Here's how it actually goes down. You hit the download button on the official site. The IN7 APK file starts downloading. Once it's done, you tap the file. Your phone might say \"This type of file can harm your device\" (that's normal for any APK). Then it asks if you want to allow installation from your browser or file manager. Say yes. Then install. That's it." },
+              { t: 'Why the App Comes as an APK', d: "Simple answer: the IN7 game isn't on the Google Play Store in most regions. So the only way to get it on Android is through the APK file. APK is just the Standard Android Package format. It's how Android works when apps aren't on the Play Store." },
+              { t: 'What Android Might Ask You to Allow', d: 'Your phone will probably say something like "Allow installation from unknown sources" or "Allow this app to install other apps." This is Android being cautious. You need to allow it for the IN7 game APK to install. Go to Settings, find Security or Privacy, and enable installation from your browser or file manager.' },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <h2 className="h-section" style={H2}>What If the File Refuses to Install</h2>
+          <p className="muted" style={P}>{"Don't panic. Check these things:"}</p>
+          <LabeledList
+            items={[
+              ['Storage', 'Do you actually have enough space? The app needs around 48 MB plus space to work.'],
+              ['Android Compatibility', "Is your phone running Android 7.0 or newer? Older versions won't work."],
+              ['Previous Version', 'Already have an old IN7 app? Uninstall it first, then install the fresh one.'],
+              ['Download Interruption', "Did the download finish completely? A half-downloaded file won't install."],
+              ['Permission Settings', 'Did you actually allow installation from unknown sources? Double-check.'],
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="wrap" style={{ paddingBottom: 32 }}>
+        <div className="card-ink" style={{ padding: 28 }}>
+          <h2 className="serif" style={{ fontSize: '1.5rem', color: '#fff8f3' }}>Where You Should NOT Download It From</h2>
+          <p className="muted-light" style={{ marginTop: 10, lineHeight: 1.65 }}>
+            {"This matters. Do not download IN7 from random APK sites. Do not trust modified versions claiming \"unlimited coins\" or \"free money hacks.\" Do not click links from Telegram groups or WhatsApp forwards promising special versions. Only use our official website. Anything else could be fake, could steal your data, or could just not work at all."}
+          </p>
+        </div>
+      </section>
+
+      <section className="section dot-paper">
+        <div className="wrap">
+          <h2 className="h-section" style={H2}>What Happens Once You Tap Install</h2>
+          <p className="muted" style={P}>{"Okay, you downloaded it. Now what? Let's talk about it like a friend showing you:"}</p>
+          <Cards
+            items={[
+              { t: 'Open the App', d: "The first screen loads up. Clean, simple. You'll see options to log in or create a new account. No confusion, no ten-page tutorial forcing itself on you." },
+              { t: 'Create or Access Your Account', d: "New here? You'll register with your phone number. Get an OTP. Enter it. Done. Already have an account? Just put in your details and hit the IN7 game login button." },
+              { t: 'Land Inside the Platform', d: "Now you're in. You'll see the lobby, game options, your wallet, profile section, and support. Everything's right there on the home screen." },
+              { t: 'Choose How You Want to Play', d: "Browse through available games. Some need practice first. Some can jump straight into it. Take your time. Try practice modes if they're available. No rush." },
+              { t: 'Manage Your Account', d: 'The wallet section shows your balance. Profile has your details. Verification keeps your account safe. Support is there if something goes wrong.' },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <h2 className="h-section" style={H2}>{"Already Downloaded It? Here's What You Might Be Looking For"}</h2>
+          <p className="muted" style={P}>{"You got the app, but something's not clicking. Check these common issues:"}</p>
+          <LabeledList
+            items={[
+              ["Can't Find the App After Downloading", "Check your app drawer or home screen. Sometimes it installs but doesn't show a shortcut. Search \"IN7\" in your phone's app search."],
+              ["APK Downloaded But Won't Install", 'Could be storage, could be permissions, could be a corrupted file. Redownload from the official site and try again.'],
+              ["App Opens, But Login Isn't Working", 'Check your internet. Make sure you\'re using the right credentials. Try the "forgot password" option if needed.'],
+              ["OTP isn't Arriving", "Check if your number is correct. Make sure you have a network signal. Wait a minute and request again. Don't spam the button."],
+              ['You Downloaded an Old Version', 'Old versions stop working. Get the latest IN7 APK download from our official website.'],
+              ["Something Doesn't Look Right", "If the app looks weird, asks for strange permissions, or feels not right, don't enter any sensitive info. Contact official support immediately."],
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="section dot-paper">
+        <div className="wrap">
+          <h2 className="h-section" style={H2}>{"We'd Rather Tell You This Than Pretend Everything Is Perfect"}</h2>
+          <ul style={UL}>
+            <li>No app can guarantee wins. Anyone saying otherwise is lying.</li>
+            <li>{"Don't download modified APKs promising free coins or hacks."}</li>
+            <li>{"Don't share OTPs with anyone."}</li>
+            <li>{"Don't chase losses. That's how people get in trouble."}</li>
+            <li>Bonuses have conditions. Read them.</li>
+            <li>Gaming should stay within a budget you can afford to lose.</li>
+            <li>{"If you're unsure about something, ask for support before proceeding."}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <h2 className="h-section" style={H2}>Why Choose Us Over Other Gaming Apps?</h2>
+          <p className="muted" style={P}>
+            {"We aren't just being salesy. Instead, we offer genuine support and straightforward steps to help you make a good side income."}
+          </p>
+          <p className="muted" style={P}>Let’s see why we stand out:</p>
+          <LabeledList
+            items={[
+              ['Quick Access', 'Built for smooth use on everyday Android phones.'],
+              ['Easy Wallet', 'Check your balance, deposits, and withdrawals in one place.'],
+              ['100% Safe APK', 'The IN7 APK is SHA-256 signed, and each release goes through an independent virus scan.'],
+              ['Regular Updates', 'Get the latest app version without hunting for random APK files.'],
+            ]}
+          />
+          <div className="card" style={{ marginTop: 32, maxWidth: 760 }}>
+            <h3 className="serif" style={H3}>Why Wait to Get Started?</h3>
+            <p className="muted" style={{ marginTop: 10, lineHeight: 1.65 }}>
+              {"Now, you don't have to jump from one random website to another just to find the right app. Download the IN7 game app and get started with a simple and smooth gaming experience."}
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="wrap" style={{ paddingBottom: 8 }}>
-        <p className="muted" style={{ fontSize: '0.92rem' }}>
-          Andar Bahar ya Dragon vs Tiger, konsa try karein? <Link href="/blog/andar-bahar-vs-dragon-tiger" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Yahan compare kiya hai</Link>. Winning tips ke liye <Link href="/in7-game-tips" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>IN7 game tips</Link> dekhein.
-        </p>
+      <section className="section dot-paper" aria-labelledby="faq-heading">
+        <div className="wrap">
+          <h2 id="faq-heading" className="h-section" style={H2}>FAQs</h2>
+          <div style={{ marginTop: 24, maxWidth: 820 }}>
+            {FAQS.map((item) => (
+              <details key={item.q} className="faq-row">
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <FAQ
-        title="IN7 gaming ke baare mein common doubts"
-        items={[
-          {
-            q: 'IN7 gaming aur baaki real money gaming apps mein kya farak hai?',
-            a: 'IN7 sirf skill-based rooms par focus karta hai, yaani RNG-only games avoid karte hain. Iska matlab har round mein aapke decisions hi outcome decide karte hain. Plus UPI cashout 5 minute ke andar, most other apps ke comparison mein bahut tez hai.',
-          },
-          {
-            q: 'IN7 gaming kahaan available hai?',
-            a: 'IN7 unhi states mein available hai jahaan skill-based real money gaming legal hai. Restricted states ke users automatically detect ho jaate hain, woh sirf practice rooms khel sakte hain.',
-          },
-          {
-            q: 'Kya IN7 ka apna app store hai?',
-            a: 'Nahi, IN7 game apk seedha hamari website se download hota hai. Hum Google Play par nahi hain (real money games ki policy ki wajah se), but APK fully signed aur SHA-256 verified hai.',
-          },
-          {
-            q: 'IN7 gaming free khel sakte ho?',
-            a: 'Haan, har room mein practice mode available hai, jaha aap demo coins se khel sakte ho. Cash rooms tabhi unlock hote hain jab aap pehla deposit karte ho.',
-          },
-        ]}
-      />
+      <style>{`
+        @media (min-width: 720px) { .doc-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+      `}</style>
 
       <script
         type="application/ld+json"
@@ -203,11 +261,20 @@ export default function In7GamingPage() {
             { name: 'IN7 Gaming', href: '/in7-gaming' },
           ]),
           webPageJsonLd({
-            title: 'IN7 Gaming Online · India’s Skill Real-Money Game',
-            description: 'IN7 Gaming is India’s skill-first real-money game platform.',
+            title: META_TITLE,
+            description: META_DESCRIPTION,
             path: '/in7-gaming',
             primaryImage: '/in7-game-banner.jpeg',
           }),
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: FAQS.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
         ])}
       />
     </>
