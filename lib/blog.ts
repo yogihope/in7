@@ -18,7 +18,7 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    "slug": "why-we-keep-playing-games-after-losing",
+    "slug": "how-to-play-in7-game",
     "title": "Why Do We Keep Playing Games on IN7 Gaming After Losing Again and Again",
     "date": "2026-09-22",
     "excerpt": "You lose once on IN7 Gaming and think, “Chalo, ek aur game.”",
@@ -265,7 +265,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ]
   },
   {
-    "slug": "how-to-play-rummy-online-basic-rules",
+    "slug": "play-online-in7-gaming-basic-rules",
     "title": "How to Play Rummy Online on IN7 Gaming and Understand the Basic Rules",
     "date": "2026-09-22",
     "excerpt": "You may know how cards work. You may even have played rummy with friends or family. But the first time you open an online rummy table on IN7 Gaming, things can feel a little confusing. Cards are being dealt, everyone is picking and throwing cards, and suddenly you are wondering, “Bhai, karna kya hai?”",

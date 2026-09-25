@@ -3,6 +3,17 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Renamed blog slugs
+      {
+        source: '/blog/why-we-keep-playing-games-after-losing',
+        destination: '/blog/how-to-play-in7-game',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-to-play-rummy-online-basic-rules',
+        destination: '/blog/play-online-in7-gaming-basic-rules',
+        permanent: true,
+      },
       // Retired blog posts → blog index
       {
         source:

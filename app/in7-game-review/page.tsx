@@ -144,7 +144,7 @@ export default function In7ReviewPage() {
 
       <section className="wrap" style={{ paddingBottom: 8 }}>
         <p className="muted" style={{ fontSize: '0.92rem' }}>
-          Safe aur responsible tarike se khelna chahte hain? <Link href="/blog/why-we-keep-playing-games-after-losing" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Responsible gaming guide</Link> padhein, ya <Link href="/in7-game-bonus" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>bonus & rewards</Link> explore karein.
+          Safe aur responsible tarike se khelna chahte hain? <Link href="/blog/how-to-play-in7-game" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>Responsible gaming guide</Link> padhein, ya <Link href="/in7-game-bonus" style={{ color: '#b91c2c', textDecoration: 'underline', textUnderlineOffset: 4 }}>bonus & rewards</Link> explore karein.
         </p>
       </section>
 
