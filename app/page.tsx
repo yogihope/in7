@@ -4,7 +4,7 @@ import DownloadCard from '@/components/DownloadCard';
 import KeyFeatures from '@/components/KeyFeatures';
 import PlayerReviews from '@/components/PlayerReviews';
 import SpinWheel from '@/components/SpinWheel';
-import { IN7_DOWNLOAD_URL, REWARD_LINKS } from '@/lib/constants';
+import { IN7_DOWNLOAD_URL, REWARD_LINKS, IE777_DOWNLOAD_URL, X89_DOWNLOAD_URL, IN7_LOGIN_URL } from '@/lib/constants';
 import { PARTNER_SITES } from '@/lib/partners';
 
 export default function HomePage() {
@@ -52,6 +52,11 @@ export default function HomePage() {
                   <a href={REWARD_LINKS[0]} target="_blank" rel="noopener noreferrer" className="btn btn-primary">🎁 Unlock ₹200–500 Reward</a>
                   <a href={REWARD_LINKS[1]} target="_blank" rel="noopener noreferrer" className="btn btn-ink">🎁 Unlock ₹200–500 Reward</a>
                   <a href={REWARD_LINKS[2]} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">🎁 Unlock ₹200–500 Reward</a>
+                </div>
+                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 12 }}>
+                  <a href={IE777_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">↓ Download IE777</a>
+                  <a href={X89_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ink">↓ Download X89</a>
+                  <a href={IN7_LOGIN_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">IN7 Login</a>
                 </div>
               </div>
             </div>
